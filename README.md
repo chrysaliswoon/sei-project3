@@ -34,11 +34,15 @@ INSERT PROJECT DESCRIPTION
 For this project, we used the following technologies:
 
 ```
-- React
-- Bootstrap with react
+- React: CRA
+- Bootstrap with React
 - MongoDB
 - Express
 - Postman
+- Storybook
+- Jest
+- Figma
+- Github Desktop
 ```
 
 ### Wireframes
@@ -62,7 +66,9 @@ We had approximately 3 weeks from ideation to creation to develop a fullstack ap
 
 1. Set up the Github Repository using the template given in the project page
 
-2. 
+2. Brainstorm for ideas in Figma
+
+3. Set up the project files and installed the necessary dependencies
 
 **Week 2**
 
