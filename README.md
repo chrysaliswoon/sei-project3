@@ -1,4 +1,4 @@
-# INSERT PROJECT 3 TITLE
+# Personal Financial Tracker
 
 ## Project Brief
 ### Technical Requirements
