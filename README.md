@@ -28,7 +28,7 @@
 
 ## Description
 
-INSERT PROJECT DESCRIPTION
+A personal financial tracker to track how much you spend and earn and take charge of your finances. Users are able to track their assets and expenditures which will visually convert the data into daigrams and charts. 
 
 ### Technical Used
 For this project, we used the following technologies:
@@ -66,9 +66,23 @@ We had approximately 3 weeks from ideation to creation to develop a fullstack ap
 
 1. Set up the Github Repository using the template given in the project page
 
-2. Brainstorm for ideas in Figma
+2. Brainstorm for ideas (FigJam) and identified which project to do based on an overall score. 
+   - Each one of us could put a score between 1 - 10 (1: Not very keen; 10: Really keen on doing)
+   - After the scoring was indicated, we added the scores and took the highest scoring project
+
+
+   ![Brainstorm Process](https://github.com/chrysaliswoon/financial-tracker/blob/main/README_Assets/Brainstorm%20Process.png?raw=true)
 
 3. Set up the project files and installed the necessary dependencies
+   - CRA: npx create-react-app
+   - Storybook: npx sb init
+   - Express: npm i express
+   - Nodemon: npm i nodemon
+   - Jest: npm i --save-dev jest
+
+4. Created a user persona (FigJam) to identify features of the financial tracker and userflow.
+
+5. Created a UML diagram (FigJam) to visually represent the architecture, design, and implementation of our financial tracker.
 
 **Week 2**
 
@@ -82,17 +96,19 @@ We had approximately 3 weeks from ideation to creation to develop a fullstack ap
 
 In order to have clarity on what was required to create the project, our first priority was creating a wireframe and a working prototype to have a visual of how everything would flow. By creating a wireframe, it also allowed us to see what components and pages we would need to create our project, and delegate the tasks. 
 
+We spent quite a bit of time brainstorming and figuring out what components and data we needed to create and collect before starting the actual coding. 
+
 
 ### Unsolved problems
 
-INSERT PROBLEMS
+- [ ] (insert problem)
 
 
 ---
 
 ## Acknowledgments
 
-I would like to thank my awesome partner KK for braving the fires and doing this project together with me as a team.
+I would like to thank my awesome partner KK for braving the fires and doing this project together with me as a team, Michael, our fantastic TA, and Simon, our instructor, for helping us figure out certain issues and problems faced in the production of this project.
 
 ---
 
