@@ -45,6 +45,10 @@ For this project, we used the following technologies:
 - Github Desktop
 ```
 
+🚀 ### Get Started
+- Clone or download the repo
+- `npm install`
+
 ### Wireframes
 
 For our wireframe, we used Figma to create an initial skeleton of what the project will look like, and identify the necessary component and files:
