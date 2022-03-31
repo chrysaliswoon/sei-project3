@@ -1,7 +1,8 @@
-import '../src/stylesheet/App.css'
-import logo from '../src/images/logo.png'
 
-function App() {
+import '../stylesheet/login.css'
+import logo from '../images/logo.png'
+
+function Login() {
   return (
     <div className="App">
       <header className="App-header">
@@ -22,4 +23,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login;
