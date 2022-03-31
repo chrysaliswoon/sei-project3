@@ -1,22 +1,29 @@
-
-import '../stylesheet/login.css'
+import styles from '../stylesheet/login.module.css'
 import logo from '../images/logo.png'
 
 function Login() {
   return (
-    <div className="App">
-      <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
+    <div className={styles.App}>
+      <header className={styles.AppHeader}>
+      <img src={logo} className={styles.logo} alt={styles.logo} />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Insert Login Form Here
         </p>
         <a
-          className="App-link"
-          href="https://reactjs.org"
+          className={styles.AppLink}
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          New? Register Here!
+        </a>
+        <a
+          className={styles.AppLink}
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Forgot Password?
         </a>
       </header>
     </div>
