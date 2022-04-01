@@ -1,14 +1,14 @@
 import styles from '../stylesheet/login.module.css'
 import logo from '../components/images/logo.png'
+import LoginForm from '../components/forms/loginForm'
 
-function Login() {
+export default function LoginPage() {
   return (
     <div className={styles.App}>
       <header className={styles.AppHeader}>
-      <img src={logo} className={styles.logo} alt={styles.logo} />
-        <p>
-          Insert Login Form Here
-        </p>
+        <img src={logo} className={styles.logo} alt={styles.logo} />
+        <h3>Welcome Back!</h3>
+        <LoginForm />
         <a
           className={styles.AppLink}
           href="#"
@@ -29,5 +29,3 @@ function Login() {
     </div>
   );
 }
-
-export default Login;

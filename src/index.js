@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import style from '../src/stylesheet/index.module.css'
-import Login from '../src/pages/login'
+import LoginPage from "../src/pages/login";
 import reportWebVitals from './unitTest/reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Login />
+    <LoginPage />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
