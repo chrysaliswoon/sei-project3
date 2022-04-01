@@ -1,6 +1,6 @@
-# Personal Financial Tracker
+# 💰 Personal Financial Tracker
 
-## Project Brief
+## 💻 Project Brief
 ### Technical Requirements
 
 - Use MongoDB, Express, React and Node
@@ -26,11 +26,11 @@
   - Descriptions of any **unsolved problems** or **major hurdles** your team had to overcome
 - A `presentation.md` of "slides" that walk through a demo of your app.
 
-## Description
+## 📜 Description
 
 A personal financial tracker to track how much you spend and earn and take charge of your finances. Users are able to track their assets and expenditures which will visually convert the data into daigrams and charts. 
 
-### Technical Used
+### ⚙️ Technical Used
 For this project, we used the following technologies:
 
 ```
@@ -45,16 +45,16 @@ For this project, we used the following technologies:
 - Github Desktop
 ```
 
-🚀 ### Get Started
+### 🚀 Get Started
 - Clone or download the repo
 - `npm install`
 
-### Wireframes
+### 📝 Wireframes
 
 For our wireframe, we used Figma to create an initial skeleton of what the project will look like, and identify the necessary component and files:
 
 
-### User Stories
+###  User Stories
 
 
 Insert user story
@@ -62,7 +62,7 @@ Insert user story
 
 ---
 
-## Planning and Development Process
+## 💡 Planning and Development Process
 
 We had approximately 3 weeks from ideation to creation to develop a fullstack application. Below is a rough estimation of how we had broken down our task lists:
 
@@ -74,23 +74,27 @@ We had approximately 3 weeks from ideation to creation to develop a fullstack ap
    - Each one of us could put a score between 1 - 10 (1: Not very keen; 10: Really keen on doing)
    - After the scoring was indicated, we added the scores and took the highest scoring project
 
-
    ![Brainstorm Process](https://github.com/chrysaliswoon/financial-tracker/blob/main/README_Assets/Brainstorm%20Process.png?raw=true)
 
 3. Set up the project files and installed the necessary dependencies
+   Front-end:
    - CRA: npx create-react-app
    - Storybook: npx sb init
-   - Express: npm i express
-   - Nodemon: npm i nodemon
    - Jest: npm i --save-dev jest
 
 4. Created a user persona (FigJam) to identify features of the financial tracker and userflow.
 
 5. Created a UML diagram (FigJam) to visually represent the architecture, design, and implementation of our financial tracker.
 
+6. Created sample data for project -> Help to establish models
+
+7. Deployed the React app on Vercel successfully 
+
+8. Set up component files and pages based on wireframe
+
 **Week 2**
 
-1.
+1. 
 
 **Week 3**
 
@@ -103,14 +107,14 @@ In order to have clarity on what was required to create the project, our first p
 We spent quite a bit of time brainstorming and figuring out what components and data we needed to create and collect before starting the actual coding. 
 
 
-### Unsolved problems
+### 👾 Unsolved problems
 
 - [ ] (insert problem)
 
 
 ---
 
-## Acknowledgments
+## 👻 Acknowledgments
 
 I would like to thank my awesome partner KK for braving the fires and doing this project together with me as a team, Michael, our fantastic TA, and Simon, our instructor, for helping us figure out certain issues and problems faced in the production of this project.
 
@@ -118,4 +122,5 @@ I would like to thank my awesome partner KK for braving the fires and doing this
 
  ## References
  
- - 
+ - https://react-hook-form.com/
+ - https://www.w3schools.com/html/html_form_elements.asp
