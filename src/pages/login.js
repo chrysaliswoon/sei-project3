@@ -1,5 +1,5 @@
 import styles from '../stylesheet/login.module.css'
-import logo from '../images/logo.png'
+import logo from '../components/images/logo.png'
 
 function Login() {
   return (
