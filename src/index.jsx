@@ -7,7 +7,7 @@ import reportWebVitals from "./unitTest/reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <RegisterForm />
+    <LoginPage />
   </React.StrictMode>,
   document.getElementById("root")
 );
