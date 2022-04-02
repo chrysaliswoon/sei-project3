@@ -2,6 +2,7 @@ import React from "react";
 import loginImg from "../../assets/login.jpg";
 import logo from "../../assets/logo.png";
 import { UserCircleIcon, LockClosedIcon } from "@heroicons/react/solid";
+import { Link } from "react-router-dom";
 
 
 export default function LoginForm() {
@@ -50,7 +51,12 @@ export default function LoginForm() {
           <button className="w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50">
             Sign In
           </button>
-          <a href ="#" className="flex flex-col text-gray-400 py-2">New? Register here</a>
+          {/* <a href ="#" className="flex flex-col text-gray-400 py-2">New? Register here</a> */}
+          <nav>
+            <Link to="/register" className="flex flex-col text-gray-400 py-2">
+              New? Register here
+            </Link>
+          </nav>
         </form>
         <div></div>
       </div>

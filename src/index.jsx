@@ -2,12 +2,19 @@ import "tailwindcss/tailwind.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import LoginPage from "./pages/login";
-import RegisterForm from "./components/forms/registerForm";
+import RegisterPage from './pages/register'
+import { BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import reportWebVitals from "./unitTest/reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <LoginPage />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
