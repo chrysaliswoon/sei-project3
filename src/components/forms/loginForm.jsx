@@ -14,7 +14,7 @@ export default function LoginForm() {
           id="login"
           method="get"
         >
-          <img className="w-20 items-center" src={logo} alt="logo" />
+          <img className="w-20 mx-auto pb-5" src={logo} alt="logo" />
           <h2 className="text-4xl dark:text-white font-bold text-center">
             SIGN IN
           </h2>
