@@ -1,4 +1,3 @@
-//? The login form is created using the React Hook Form
 import React from "react";
 import loginImg from "../../assets/login.jpg";
 import logo from "../../assets/logo.png";
