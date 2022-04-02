@@ -2,11 +2,12 @@ import "tailwindcss/tailwind.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import LoginPage from "./pages/login";
+import RegisterForm from "./components/forms/registerForm";
 import reportWebVitals from "./unitTest/reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <LoginPage />
+    <RegisterForm />
   </React.StrictMode>,
   document.getElementById("root")
 );
