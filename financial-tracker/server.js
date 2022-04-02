@@ -1,9 +1,8 @@
-const express = require ("express");
-const app = express()
-const port = 3000
-app.listen(port)
-
+const express = require("express");
+const app = express();
+const port = 3000;
+app.listen(port);
 
 app.get("/", (req, res) => {
-    res.send("The port is working")
-})
+  res.send("The port is working", port);
+});
