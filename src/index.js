@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import style from '../src/stylesheet/index.module.css'
 import LoginPage from "../src/pages/login";
 import reportWebVitals from './unitTest/reportWebVitals';
 
