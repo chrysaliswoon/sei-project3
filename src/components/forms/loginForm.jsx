@@ -1,7 +1,7 @@
 import React from "react";
 import loginImg from "../../assets/login.jpg";
 import logo from "../../assets/logo.png";
-import { BeakerIcon } from "@heroicons/react/solid";
+import { UserCircleIcon, LockClosedIcon } from "@heroicons/react/solid";
 
 
 export default function LoginForm() {
@@ -21,7 +21,7 @@ export default function LoginForm() {
             SIGN IN
           </h2>
           <div className="flex flex-col text-gray-400 py-2">
-            <BeakerIcon className="h-5 w-5 text-blue-500" />
+            <UserCircleIcon className="h-5 w-5 text-gray-500" />
             <input
               className="rounded-1g bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:gray-800 focus:outline-none"
               type="email"
@@ -31,6 +31,7 @@ export default function LoginForm() {
             ></input>
           </div>
           <div className="flex flex-col text-gray-400 py-2">
+            <LockClosedIcon className="h-5 w-5 text-gray-500" />
             <input
               className="rounded-1g bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:gray-800 focus:outline-none"
               type="password"
