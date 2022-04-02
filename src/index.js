@@ -1,7 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import "tailwindcss/tailwind.css";
+import React from "react";
+import ReactDOM from "react-dom";
 import LoginPage from "../src/pages/login";
-import reportWebVitals from './unitTest/reportWebVitals';
+import reportWebVitals from "./unitTest/reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
