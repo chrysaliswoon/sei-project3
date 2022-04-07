@@ -56,6 +56,7 @@ export default function RegisterForm() {
               Full Name
             </label>
             <input
+              className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
               {...register("name", {
                 required: true,
                 pattern: /^[A-Za-z]+$/i,
@@ -63,6 +64,7 @@ export default function RegisterForm() {
             />
             {errors?.name?.type === "required" && <p>This field is required</p>}
             {errors?.name?.type === "pattern" && (
+              
               <p>Alphabetical characters only</p>
             )}
           </div>
