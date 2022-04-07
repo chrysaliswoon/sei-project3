@@ -2,9 +2,10 @@ import React from "react";
 
 export default function RegisterForm() {
   return (
-    <div>
+    <div className="bg-gray-100 mx-auto max-w-6xl bg-white py-20 px-12 lg:px-24 shadow-xl mb-24">
       <form>
-        <div className="md:w-1/2 px-3 mb-6 md:mb-0">
+        <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
+        <div className="-mx-3 md:flex mb-6">
           <label
             className="uppercase tracking-wide text-black text-xs font-bold mb-2"
             for="name"
@@ -18,8 +19,9 @@ export default function RegisterForm() {
             id="name"
           ></input>
         </div>
-        <div>
-          <label className="md:w-1/2 px-3" for="email">
+        <div className="-mx-3 md:flex mb-6">
+        <div className="md:w-1/2 px-3 mb-6 md:mb-0">
+          <label className="uppercase tracking-wide text-black text-xs font-bold mb-2" for="email">
             Email Address
           </label>
           <input
@@ -29,8 +31,8 @@ export default function RegisterForm() {
             id="email"
           ></input>
         </div>
-        <div>
-          <label className for="email">
+        <div className="md:w-1/2 px-3 mb-6 md:mb-0">
+          <label className="uppercase tracking-wide text-black text-xs font-bold mb-2" for="email">
             Confirm Email Address
           </label>
           <input
@@ -40,8 +42,9 @@ export default function RegisterForm() {
             id="email"
           ></input>
         </div>
+        </div>
         <div>
-          <label className for="username">
+          <label className="uppercase tracking-wide text-black text-xs font-bold mb-2" for="username">
             Username
           </label>
           <input
@@ -51,8 +54,9 @@ export default function RegisterForm() {
             id="username"
           ></input>
         </div>
-        <div>
-          <label className for="password">
+        <div className="-mx-3 md:flex mb-6">
+        <div className="md:w-1/2 px-3 mb-6 md:mb-0">
+          <label className="uppercase tracking-wide text-black text-xs font-bold mb-2" for="password">
             Password
           </label>
           <input
@@ -62,8 +66,8 @@ export default function RegisterForm() {
             id="password"
           ></input>
         </div>
-        <div>
-          <label className for="password">
+        <div className="md:w-1/2 px-3 mb-6 md:mb-0">
+          <label className="uppercase tracking-wide text-black text-xs font-bold mb-2" for="password">
             Confirm Password
           </label>
           <input
@@ -73,13 +77,17 @@ export default function RegisterForm() {
             id="password"
           ></input>
         </div>
-        <div>
+        </div>
+        <div className="-mx-3 md:flex mt-2">
+        <div className="md:w-full px-3">
           <input
-            className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
+            className="md:w-full bg-gray-900 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
             type="submit"
             name="submit"
             id="submit"
           ></input>
+        </div>
+        </div>
         </div>
       </form>
     </div>
