@@ -43,17 +43,6 @@ export default function RegisterForm() {
           ></input>
         </div>
         </div>
-        <div>
-          <label className="uppercase tracking-wide text-black text-xs font-bold mb-2" for="username">
-            Username
-          </label>
-          <input
-            className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
-            type="username"
-            name="text"
-            id="username"
-          ></input>
-        </div>
         <div className="-mx-3 md:flex mb-6">
         <div className="md:w-1/2 px-3 mb-6 md:mb-0">
           <label className="uppercase tracking-wide text-black text-xs font-bold mb-2" for="password">
