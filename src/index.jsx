@@ -3,6 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import LoginPage from "./pages/login";
 import RegisterPage from './pages/register'
+import Dashboard from './pages/dashboard'
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import reportWebVitals from "./unitTest/reportWebVitals";
@@ -13,6 +14,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
+        <Route path="dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
