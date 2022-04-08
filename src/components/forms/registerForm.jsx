@@ -1,16 +1,17 @@
-import React, {useRef} from "react";
-import { useForm } from 'react-hook-form'
+import React, { useRef } from "react";
+import { useForm } from "react-hook-form";
+import Button from "../buttons/button";
+import { Link } from "react-router-dom";
 
 export default function RegisterForm() {
-  
   const {
     register,
     handleSubmit,
     watch,
-    formState: { errors }
+    formState: { errors },
   } = useForm();
-  const password = useRef({})
-  password.current = watch("password", "")
+  const password = useRef({});
+  password.current = watch("password", "");
 
   const email = useRef({});
   email.current = watch("email", "");
@@ -18,28 +19,23 @@ export default function RegisterForm() {
   const onSubmit = async (data) => {
     console.log(JSON.stringify(data));
   };
-  
-      // const handleSubmit = (event) => {
-      //   event.preventDefault();
-      //   console.log(event.target.name.value)
-      //   console.log(event.target.email.value)
-      //   console.log(event.target.confirmEmail.value);
-      //   console.log(event.target.password.value);
-      //   console.log(event.target.confirmPassword.value);
 
-      //   fetch("/moneybankbackend.herokuapp.com/moneybank/register", {
-      //     method: "POST",
-      //     body: JSON.stringify({ names: event.target.name.value }),
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //   })
-      //     .then((res) => res.json())
-      //     .then((resJson) => {
-      //       props.handleAddUser(resJson);
-      //     })
-      //     .catch((error) => console.log({ Error: error }));
-      // };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+
+  //   fetch("/moneybankbackend.herokuapp.com/moneybank/register", {
+  //     method: "POST",
+  //     body: JSON.stringify({ names: event.target.name.value }),
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((resJson) => {
+  //       props.handleAddUser(resJson);
+  //     })
+  //     .catch((error) => console.log({ Error: error }));
+  // };
 
   return (
     <div className="bg-gray-100 mx-auto max-w-6xl bg-gray-200 py-20 px-12 lg:px-24 shadow-xl mb-24">
@@ -151,12 +147,13 @@ export default function RegisterForm() {
           </div>
           <div className="-mx-3 md:flex mt-2">
             <div className="md:w-full px-3">
-              <button
-                className="md:w-full bg-gray-900 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
-                type="submit"
-                name="submit"
-                id="submit"
-              >Submit</button>
+                <Button
+                  css="md:w-full bg-gray-900 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
+                  type="submit"
+                  name="submit"
+                  id="submit"
+                  description="Submit"
+                />
             </div>
           </div>
         </div>
