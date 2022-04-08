@@ -2,7 +2,6 @@ import RegisterForm from '../components/forms/registerForm'
 import { useState } from 'react';
 
 export default function RegisterPage() {
-    const [users, setUsers] = useState([])
 
     return (
         <div className="bg-gray-100" >
