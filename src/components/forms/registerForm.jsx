@@ -106,7 +106,7 @@ export default function RegisterForm() {
                   validate: (value) => value === email.current,
                 })}
               ></input>
-              {errors?.confirmEmail && <p>Please check. The email don't match</p>}
+              {errors?.confirmEmail && <p>The email don't match</p>}
             </div>
           </div>
           <div className="-mx-3 md:flex mb-6">
@@ -152,12 +152,12 @@ export default function RegisterForm() {
           </div>
           <div className="-mx-3 md:flex mt-2">
             <div className="md:w-full px-3">
-              <input
+              <button
                 className="md:w-full bg-gray-900 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
                 type="submit"
                 name="submit"
                 id="submit"
-              ></input>
+              >Submit</button>
             </div>
           </div>
         </div>
