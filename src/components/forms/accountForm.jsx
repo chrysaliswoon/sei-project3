@@ -29,7 +29,6 @@ export default function AccountForm() {
                 id="accountName"
                 {...register("accountName", {
                   required: true,
-                  pattern: /^[A-Za-z]+$/i,
                 })}
               />
             </div>
