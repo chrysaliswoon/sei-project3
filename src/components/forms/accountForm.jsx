@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import Button from '../buttons/button'
 
@@ -29,7 +29,6 @@ export default function AccountForm() {
                 id="accountName"
                 {...register("accountName", {
                   required: true,
-                  pattern: /^[A-Za-z]+$/i,
                 })}
               />
             </div>
