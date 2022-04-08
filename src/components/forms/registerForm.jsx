@@ -106,7 +106,7 @@ export default function RegisterForm() {
                   validate: (value) => value === email.current,
                 })}
               ></input>
-              {errors?.confirmEmail && <p>The email don't match</p>}
+              {errors?.confirmEmail && <p>Please check. The email don't match</p>}
             </div>
           </div>
           <div className="-mx-3 md:flex mb-6">
