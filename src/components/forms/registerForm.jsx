@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import {useForm} from 'react-hook-form'
 
 export default function RegisterForm() {
@@ -7,20 +7,18 @@ export default function RegisterForm() {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors }
   } = useForm();
+  const password = useRef({})
+  password.current = watch("password", "")
 
-  const onSubmit = (event) =>
-    
-        fetch("/moneybankbackend.herokuapp.com/moneybank/register", {
-          method: "POST",
-          body: JSON.stringify({ names: event.target.name.value }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-    // console.log(data);
+  const email = useRef({});
+  email.current = watch("email", "");
 
+  const onSubmit = async (data) => {
+    console.log(JSON.stringify(data));
+  };
   
       // const handleSubmit = (event) => {
       //   event.preventDefault();
@@ -56,6 +54,10 @@ export default function RegisterForm() {
               Full Name
             </label>
             <input
+              className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
+              type="name"
+              name="name"
+              id="name"
               {...register("name", {
                 required: true,
                 pattern: /^[A-Za-z]+$/i,
@@ -79,7 +81,13 @@ export default function RegisterForm() {
                 type="email"
                 name="email"
                 id="email"
+                {...register("email", {
+                  required: true,
+                })}
               ></input>
+              {errors?.email?.type === "required" && (
+                <p>This field is required</p>
+              )}
             </div>
             <div className="md:w-1/2 px-3 mb-6 md:mb-0">
               <label
@@ -93,7 +101,12 @@ export default function RegisterForm() {
                 type="email"
                 name="confirmEmail"
                 id="confirmEmail"
+                {...register("confirmEmail", {
+                  required: true,
+                  validate: (value) => value === email.current,
+                })}
               ></input>
+              {errors?.confirmEmail && <p>The email don't match</p>}
             </div>
           </div>
           <div className="-mx-3 md:flex mb-6">
@@ -109,7 +122,13 @@ export default function RegisterForm() {
                 type="password"
                 name="password"
                 id="password"
+                {...register("password", {
+                  required: true,
+                })}
               ></input>
+              {errors?.password?.type === "required" && (
+                <p>This field is required</p>
+              )}
             </div>
             <div className="md:w-1/2 px-3 mb-6 md:mb-0">
               <label
@@ -123,7 +142,12 @@ export default function RegisterForm() {
                 type="password"
                 name="confirmPassword"
                 id="confirmPassword"
+                {...register("confirmPassword", {
+                  required: true,
+                  validate: (value) => value === password.current,
+                })}
               ></input>
+              {errors?.confirmPassword && <p>The passwords don't match</p>}
             </div>
           </div>
           <div className="-mx-3 md:flex mt-2">
