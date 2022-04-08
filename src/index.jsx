@@ -1,17 +1,23 @@
 import "tailwindcss/tailwind.css";
 import React from "react";
-import ReactDOM from "react-dom";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import reportWebVitals from "./unitTest/reportWebVitals";
+//? Import Pages
 import LoginPage from "./pages/login";
 import RegisterPage from './pages/register'
 import AccountSetup from './pages/accountSetup'
 import AccountDetails from "./pages/accountDetails";
 import Dashboard from './pages/dashboard'
-import { BrowserRouter } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
-import reportWebVitals from "./unitTest/reportWebVitals";
 
-ReactDOM.render(
-  <React.StrictMode>
+//? New version of React
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
+root.render(
+  <StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginPage />} />
@@ -21,8 +27,7 @@ ReactDOM.render(
         <Route path="dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

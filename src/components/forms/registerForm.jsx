@@ -44,7 +44,7 @@ export default function RegisterForm() {
           <div className="-mx-3 md:flex mb-6">
             <label
               className="uppercase tracking-wide text-black text-xs font-bold mb-2"
-              for="name"
+              htmlFor="name"
             >
               Full Name
             </label>
@@ -67,7 +67,7 @@ export default function RegisterForm() {
             <div className="md:w-1/2 px-3 mb-6 md:mb-0">
               <label
                 className="uppercase tracking-wide text-black text-xs font-bold mb-2"
-                for="email"
+                htmlFor="email"
               >
                 Email Address
               </label>
@@ -87,7 +87,7 @@ export default function RegisterForm() {
             <div className="md:w-1/2 px-3 mb-6 md:mb-0">
               <label
                 className="uppercase tracking-wide text-black text-xs font-bold mb-2"
-                for="email"
+                htmlFor="email"
               >
                 Confirm Email Address
               </label>
@@ -108,7 +108,7 @@ export default function RegisterForm() {
             <div className="md:w-1/2 px-3 mb-6 md:mb-0">
               <label
                 className="uppercase tracking-wide text-black text-xs font-bold mb-2"
-                for="password"
+                htmlFor="password"
               >
                 Password
               </label>
@@ -128,7 +128,7 @@ export default function RegisterForm() {
             <div className="md:w-1/2 px-3 mb-6 md:mb-0">
               <label
                 className="uppercase tracking-wide text-black text-xs font-bold mb-2"
-                for="password"
+                htmlFor="password"
               >
                 Confirm Password
               </label>
@@ -147,13 +147,13 @@ export default function RegisterForm() {
           </div>
           <div className="-mx-3 md:flex mt-2">
             <div className="md:w-full px-3">
-                <Button
-                  css="md:w-full bg-gray-900 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
-                  type="submit"
-                  name="submit"
-                  id="submit"
-                  description="Submit"
-                />
+              <Button
+                css="md:w-full bg-gray-900 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
+                type="submit"
+                name="submit"
+                id="submit"
+                description="Submit"
+              />
             </div>
           </div>
         </div>
