@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import Button from "../buttons/button";
-import { Link } from "react-router-dom";
 
 export default function RegisterForm() {
   const {
@@ -38,7 +37,7 @@ export default function RegisterForm() {
   // };
 
   return (
-    <div className="bg-gray-100 mx-auto max-w-6xl bg-gray-200 py-20 px-12 lg:px-24 shadow-xl mb-24">
+    <div className="mx-auto max-w-6xl bg-gray-200 py-20 px-12 lg:px-24 shadow-xl mb-24">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
           <div className="-mx-3 md:flex mb-6">
