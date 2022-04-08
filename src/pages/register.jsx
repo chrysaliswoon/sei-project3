@@ -1,8 +1,10 @@
+//? Uses Wizard Form / Funnel (a state management  library) to store user input through different pages or sections. 
+import React from 'react';
+import { BrowserRouter, Router, Route } from 'react-router-dom';
+import {StateMachineProvider, createStore} from 'little-state-machine'
 import RegisterForm from '../components/forms/registerForm'
-import { useState } from 'react';
 
 export default function RegisterPage() {
-    const [users, setUsers] = useState([])
 
     return (
         <div className="bg-gray-100" >
