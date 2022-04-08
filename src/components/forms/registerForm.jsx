@@ -1,5 +1,5 @@
 import React, {useRef} from "react";
-import {useForm} from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 
 export default function RegisterForm() {
   
@@ -54,7 +54,7 @@ export default function RegisterForm() {
             </label>
             <input
               className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
-              type="name"
+              type="text"
               name="name"
               id="name"
               {...register("name", {
