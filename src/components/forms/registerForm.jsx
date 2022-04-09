@@ -26,7 +26,7 @@ export default function RegisterForm(props) {
     // event.preventDefault();
     // console.log(JSON.stringify(event));
     const URL = BACKEND + "new/register"
-    // console.log(URL)
+    console.log(URL)
       fetch(URL, {
       method: "POST",
       body: JSON.stringify(event),
