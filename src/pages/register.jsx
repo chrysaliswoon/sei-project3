@@ -9,7 +9,7 @@ export default function RegisterPage() {
       <div className="bg-gray-100">
         <img className="w-20 mx-auto pt-10" src={logo} alt="logo" />
         <h1 className="text-center uppercase tracking-wide text-black text-xl font-bold mb-2 py-5">
-          Registration Form
+          Registration Form - User Profile
         </h1>
         <RegisterForm />
       </div>
