@@ -11,6 +11,7 @@ import RegisterPage from './pages/register'
 // import AccountSetup from './pages/accountSetup'
 // import AccountDetails from "./pages/accountDetails";
 import Dashboard from './pages/dashboard'
+import Error from "./pages/error";
 
 //? New version of React
 const rootElement = document.getElementById("root");
@@ -25,7 +26,7 @@ root.render(
         {/* <Route path="accountSetup" element={<AccountSetup />} /> */}
         {/* <Route path="accountDetails" element={<AccountDetails />} /> */}
         <Route path="dashboard" element={<Dashboard />} />
-        {/* <Route path="*" element={}/> */}
+        <Route path="*" element={<Error />}/>
       </Routes>
     </BrowserRouter>
   </StrictMode>
