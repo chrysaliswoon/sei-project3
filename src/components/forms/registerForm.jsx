@@ -5,7 +5,9 @@ import Button from "../buttons/button";
 // import {} from 'dotenv/config' 
 import { BACKEND } from "../../utils";
 
-export default function RegisterForm() {
+export default function RegisterForm(props) {
+  const user = props.user
+
   const {
     register,
     handleSubmit,
@@ -21,9 +23,9 @@ export default function RegisterForm() {
 
   const onSubmit = async (event) => {
     // event.preventDefault();
-    console.log(JSON.stringify(event));
+    // console.log(JSON.stringify(event));
     const URL = BACKEND + "register"
-    console.log(URL)
+    // console.log(URL)
       fetch(URL, {
       method: "POST",
       body: JSON.stringify(event),
@@ -31,24 +33,8 @@ export default function RegisterForm() {
         "Content-Type": "application/json",
       },
     })
+    user(event)
   };
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-
-  //   fetch("/moneybankbackend.herokuapp.com/moneybank/register", {
-  //     method: "POST",
-  //     body: JSON.stringify({ names: event.target.name.value }),
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((resJson) => {
-  //       props.handleAddUser(resJson);
-  //     })
-  //     .catch((error) => console.log({ Error: error }));
-  // };
 
   return (
     <div className="mx-auto max-w-6xl bg-gray-200 py-20 px-12 lg:px-24 shadow-xl mb-24">

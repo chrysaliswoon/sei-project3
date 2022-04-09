@@ -8,8 +8,8 @@ import reportWebVitals from "./unitTest/reportWebVitals";
 //? Import Pages
 import LoginPage from "./pages/login";
 import RegisterPage from './pages/register'
-import AccountSetup from './pages/accountSetup'
-import AccountDetails from "./pages/accountDetails";
+// import AccountSetup from './pages/accountSetup'
+// import AccountDetails from "./pages/accountDetails";
 import Dashboard from './pages/dashboard'
 
 //? New version of React
@@ -22,8 +22,8 @@ root.render(
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
-        <Route path="accountSetup" element={<AccountSetup />} />
-        <Route path="accountDetails" element={<AccountDetails />} />
+        {/* <Route path="accountSetup" element={<AccountSetup />} /> */}
+        {/* <Route path="accountDetails" element={<AccountDetails />} /> */}
         <Route path="dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
