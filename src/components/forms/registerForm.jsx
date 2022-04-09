@@ -5,9 +5,7 @@ import Button from "../buttons/button";
 // import {} from 'dotenv/config' 
 import { BACKEND } from "../../utils";
 
-export default function RegisterForm(props) {
-  const profile = props.profile
-  const registerStage = props.registerStage
+export default function RegisterForm({profile, nextStage}) {
 
   const {
     register,
@@ -23,8 +21,6 @@ export default function RegisterForm(props) {
   email.current = watch("email", "");
 
   const onSubmit = async (event) => {
-    // event.preventDefault();
-    // console.log(JSON.stringify(event));
     const URL = BACKEND + "new/register"
     console.log(URL)
       fetch(URL, {
@@ -35,7 +31,7 @@ export default function RegisterForm(props) {
       },
     })
     profile(event)
-    registerStage()
+    nextStage()
   };
 
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import Button from '../buttons/button'
 
-export default function AccountForm() {
+export default function AccountForm({profile}) {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async (data) => {
