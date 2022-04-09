@@ -1,12 +1,21 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import Button from '../buttons/button'
+import { BACKEND } from "../../utils";
 
 export default function AccountForm({profile}) {
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = async (data) => {
-    console.log(JSON.stringify(data));
+  const onSubmit = async (event) => {
+    const URL = BACKEND + "new/register"
+    fetch(URL, {
+      method: "POST",
+      body: JSON.stringify(event),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    profile(event)
   };
 
   return (

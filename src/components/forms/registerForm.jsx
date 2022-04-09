@@ -21,15 +21,14 @@ export default function RegisterForm({profile, nextStage}) {
   email.current = watch("email", "");
 
   const onSubmit = async (event) => {
-    const URL = BACKEND + "new/register"
-    console.log(URL)
-      fetch(URL, {
-      method: "POST",
-      body: JSON.stringify(event),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+    // const URL = BACKEND + "new/register"
+    //   fetch(URL, {
+    //   method: "POST",
+    //   body: JSON.stringify(event),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // })
     profile(event)
     nextStage()
   };
