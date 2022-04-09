@@ -21,7 +21,7 @@ export default function RegisterForm() {
   const onSubmit = async (event) => {
     // event.preventDefault();
     console.log(JSON.stringify(event));
-      fetch({process.env.REACT_APP_BACKEND}, {
+      fetch(process.env.REACT_APP_BACKEND, {
       method: "POST",
       body: JSON.stringify(event),
       headers: {
