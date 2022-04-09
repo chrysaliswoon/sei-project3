@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import Button from "../buttons/button";
 
 // import {} from 'dotenv/config' 
+import { BACKEND } from "../../utils";
 
 export default function RegisterForm() {
   const {
@@ -21,7 +22,7 @@ export default function RegisterForm() {
   const onSubmit = async (event) => {
     // event.preventDefault();
     console.log(JSON.stringify(event));
-      fetch(process.env.REACT_APP_BACKEND/moneybank/register, {
+      fetch(BACKEND,"/register", {
       method: "POST",
       body: JSON.stringify(event),
       headers: {
