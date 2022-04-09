@@ -22,7 +22,7 @@ export default function RegisterForm() {
   const onSubmit = async (event) => {
     // event.preventDefault();
     console.log(JSON.stringify(event));
-      fetch(BACKEND,"/register", {
+      fetch(BACKEND, "/register", {
       method: "POST",
       body: JSON.stringify(event),
       headers: {
