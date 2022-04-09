@@ -9,14 +9,22 @@ export default function RegisterForm() {
     watch,
     formState: { errors },
   } = useForm();
+
   const password = useRef({});
   password.current = watch("password", "");
 
   const email = useRef({});
   email.current = watch("email", "");
 
-  const onSubmit = async (data) => {
-    console.log(JSON.stringify(data));
+  const onSubmit = async (event) => {
+    console.log(JSON.stringify(event));
+      fetch("/moneybankbackend.herokuapp.com/moneybank/register", {
+      method: "POST",
+      body: JSON.stringify(event),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
   };
 
   // const handleSubmit = (event) => {
