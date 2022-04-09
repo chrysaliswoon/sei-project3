@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import Button from "../buttons/button";
 
+import {} from 'dotenv/config' 
+
 export default function RegisterForm() {
   const {
     register,
@@ -17,8 +19,9 @@ export default function RegisterForm() {
   email.current = watch("email", "");
 
   const onSubmit = async (event) => {
+    // event.preventDefault();
     console.log(JSON.stringify(event));
-      fetch("/moneybankbackend.herokuapp.com/moneybank/register", {
+      fetch({process.env.REACT_APP_BACKEND}, {
       method: "POST",
       body: JSON.stringify(event),
       headers: {
