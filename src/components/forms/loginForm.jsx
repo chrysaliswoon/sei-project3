@@ -19,7 +19,7 @@ export default function LoginForm() {
           method="get"
         >
           <img className="w-20 mx-auto pb-5" src={logo} alt="logo" />
-          <h2 className="text-4xl dark:text-white font-bold text-center">
+          <h2 className="text-4xl text-white font-bold text-center">
             SIGN IN
           </h2>
           <div className="flex flex-col text-gray-400 py-2">

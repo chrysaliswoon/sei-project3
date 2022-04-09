@@ -6,7 +6,8 @@ import Button from "../buttons/button";
 import { BACKEND } from "../../utils";
 
 export default function RegisterForm(props) {
-  const user = props.user
+  const profile = props.profile
+  const registerStage = props.registerStage
 
   const {
     register,
@@ -33,7 +34,8 @@ export default function RegisterForm(props) {
         "Content-Type": "application/json",
       },
     })
-    user(event)
+    profile(event)
+    registerStage()
   };
 
   return (
