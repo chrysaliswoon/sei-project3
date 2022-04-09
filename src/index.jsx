@@ -25,6 +25,7 @@ root.render(
         {/* <Route path="accountSetup" element={<AccountSetup />} /> */}
         {/* <Route path="accountDetails" element={<AccountDetails />} /> */}
         <Route path="dashboard" element={<Dashboard />} />
+        <Route path="*" element={}/>
       </Routes>
     </BrowserRouter>
   </StrictMode>

@@ -25,7 +25,7 @@ export default function RegisterForm(props) {
   const onSubmit = async (event) => {
     // event.preventDefault();
     // console.log(JSON.stringify(event));
-    const URL = BACKEND + "register"
+    const URL = BACKEND + "new/register"
     // console.log(URL)
       fetch(URL, {
       method: "POST",

@@ -6,9 +6,9 @@ import AccountForm from "../components/forms/accountForm";
 export default function RegisterPage() {
   const [registerStage, setRegisterStage] = useState(0);
   const [profile, setProfile] = useState();
-  console.log(profile)
+  // console.log(profile)
   // console.log(registerStage)
-  console.log(setRegisterStage)
+  // console.log(setRegisterStage)
 
   return (
     <div className="bg-gray-100">
@@ -19,7 +19,7 @@ export default function RegisterPage() {
             Registration Form - User Profile
           </h1>
           <RegisterForm profile={setProfile} />
-          <RegisterForm registerStage={setRegisterStage + 1} />
+          {/* <RegisterForm registerStage={setRegisterStage + 1} /> */}
         </div>
       ) : (
         <div className="Account Setup">
