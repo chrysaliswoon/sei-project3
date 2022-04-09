@@ -40,8 +40,9 @@ export default function AccountForm() {
                 Account Type
               </label>
               <select
-                className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
-                id="accountType"
+                // className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
+                // id="accountType"
+                {...register("accountType", {required: true})}
               >
                 <option value="debit">Debit</option>
                 <option value="credit">Credit</option>
@@ -64,7 +65,6 @@ export default function AccountForm() {
               id="accountDescription"
               {...register("accountDescription", {
                 required: true,
-                pattern: /^[A-Za-z]+$/i,
               })}
             />
           </div>

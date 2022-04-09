@@ -54,7 +54,6 @@ export default function RegisterForm() {
               id="name"
               {...register("name", {
                 required: true,
-                pattern: /^[A-Za-z]+$/i,
               })}
             />
             {errors?.name?.type === "required" && <p>This field is required</p>}
