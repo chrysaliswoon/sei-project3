@@ -1,13 +1,11 @@
 import logo from "../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 export default function SideNavigation() {
   return (
     <aside className="w-64" aria-label="Sidebar">
       <div className="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
-        <a
-          href="https://sei-financial-tracker.vercel.app"
-          className="flex items-center pl-2.5 mb-5"
-        >
+        <Link to="/dashboard" className="flex items-center pl-2.5 mb-5">
           <img
             src={logo}
             className="h-6 mr-3 sm:h-7"
@@ -16,18 +14,17 @@ export default function SideNavigation() {
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
             MoneyBank
           </span>
-        </a>
+        </Link>
         <ul className="space-y-2">
           <li>
-            <a
-              href="#"
+            <Link
+              to="/profile"
               className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               <svg
                 className="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                 fillRule="currentColor"
                 viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   fillRule="evenodd"
@@ -36,35 +33,33 @@ export default function SideNavigation() {
                 ></path>
               </svg>
               <span className="flex-1 ml-3 whitespace-nowrap">Profile</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="/dashboard"
               className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               <svg
                 className="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                 fillRule="currentColor"
                 viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
               >
                 <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
                 <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
               </svg>
               <span className="ml-3">Dashboard</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="/transactions"
               className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               <svg
                 className="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                 fill="currentColor"
                 viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   fillRule="evenodd"
@@ -72,19 +67,20 @@ export default function SideNavigation() {
                   clipRule="evenodd"
                 ></path>
               </svg>
-              <span className="flex-1 ml-3 whitespace-nowrap">Transactions</span>
-            </a>
+              <span className="flex-1 ml-3 whitespace-nowrap">
+                Transactions
+              </span>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="/accounts"
               className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               <svg
                 className="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                 fillRule="currentColor"
                 viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   fillRule="evenodd"
@@ -93,18 +89,17 @@ export default function SideNavigation() {
                 ></path>
               </svg>
               <span className="flex-1 ml-3 whitespace-nowrap">Accounts</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="/goals"
               className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               <svg
                 className="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                 fillRule="currentColor"
                 viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   fillRule="evenodd"
@@ -113,7 +108,7 @@ export default function SideNavigation() {
                 ></path>
               </svg>
               <span className="flex-1 ml-3 whitespace-nowrap">Goals</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

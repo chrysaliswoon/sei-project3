@@ -29,7 +29,7 @@ export default function RegisterPage() {
           <h1 className="text-center uppercase tracking-wide text-black text-xl font-bold mb-2 py-5">
             Registration Form - Account Setup
           </h1>
-          <AccountForm profile={addToProfile} />
+            <AccountForm profile={addToProfile} />
           <pre>{JSON.stringify(profile, null, 2)}</pre>
         </div>
       )}
