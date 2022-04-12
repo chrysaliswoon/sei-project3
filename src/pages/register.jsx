@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import RegisterForm from "../components/forms/registerForm";
 import AccountForm from "../components/forms/accountForm";
-import Button from "../components/buttons/button"
 
 export default function RegisterPage() {
   const [registerStage, setRegisterStage] = useState(0);
@@ -10,20 +9,6 @@ export default function RegisterPage() {
   const addToProfile = data => {
     setProfile({...profile, ...data})
   }
-
-    // const onSubmit = async (data) => {
-    //   const URL = BACKEND + "new/register";
-    //   fetch(URL, {
-    //     method: "POST",
-    //     body: JSON.stringify(data),
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   });
-    //   profile(data);
-    //   // reset(event);
-    // };
-
 
   return (
     <div className="bg-gray-100">
@@ -45,7 +30,6 @@ export default function RegisterPage() {
             Registration Form - Account Setup
           </h1>
             <AccountForm profile={profile} />
-            
           <pre>{JSON.stringify(profile, null, 2)}</pre>
         </div>
       )}
