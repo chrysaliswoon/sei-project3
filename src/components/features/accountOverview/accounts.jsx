@@ -1,5 +1,4 @@
 import Cards from "../accountOverview/cardsOverview";
-import TestCards from "../../../assets/testAccounts/dbs.jpeg"
 
 export default function Accounts() {
   return (
@@ -8,7 +7,7 @@ export default function Accounts() {
         <h1 className="uppercase font-bold">Accounts</h1>
       </div>
       <div>
-              <Cards url={TestCards}/>
+        <Cards />
       </div>
     </div>
   );
