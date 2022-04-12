@@ -11,12 +11,11 @@ export default function AccountForm({profile}) {
     const URL = BACKEND + "new/register"
     fetch(URL, {
       method: "POST",
-      body: JSON.stringify(event),
+      body: JSON.stringify({...profile, ...event}),
       headers: {
         "Content-Type": "application/json",
       },
     })
-    profile(event)
     // reset(event);
   };
 
@@ -96,7 +95,7 @@ export default function AccountForm({profile}) {
               })}
             />
           </div>
-          {/* <Link to="/"> */}
+          <Link to="/success">
           <Button
             css="md:w-full bg-gray-900 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
             type="submit"
@@ -104,7 +103,7 @@ export default function AccountForm({profile}) {
             id="submit"
             description="Submit"
           />
-          {/* </Link> */}
+          </Link>
         </div>
       </form>
     </div>

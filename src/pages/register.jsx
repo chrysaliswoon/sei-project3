@@ -11,6 +11,20 @@ export default function RegisterPage() {
     setProfile({...profile, ...data})
   }
 
+    // const onSubmit = async (data) => {
+    //   const URL = BACKEND + "new/register";
+    //   fetch(URL, {
+    //     method: "POST",
+    //     body: JSON.stringify(data),
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //   });
+    //   profile(data);
+    //   // reset(event);
+    // };
+
+
   return (
     <div className="bg-gray-100">
       {registerStage === 0 ? (
@@ -30,8 +44,9 @@ export default function RegisterPage() {
           <h1 className="text-center uppercase tracking-wide text-black text-xl font-bold mb-2 py-5">
             Registration Form - Account Setup
           </h1>
-          <AccountForm profile={addToProfile} />
-          <pre>{JSON.stringify(profile, null, 2)}</pre>
+            <AccountForm profile={profile} />
+            
+          {/* <pre>{JSON.stringify(profile, null, 2)}</pre> */}
         </div>
       )}
     </div>

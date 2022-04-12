@@ -12,6 +12,7 @@ import RegisterPage from './pages/register'
 // import AccountDetails from "./pages/accountDetails";
 import Dashboard from './pages/dashboard'
 import Error from "./pages/error";
+import RegistrationSuccess from "./pages/sucess";
 
 //? New version of React
 const rootElement = document.getElementById("root");
@@ -24,7 +25,8 @@ root.render(
         <Route path="/" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
         <Route path="dashboard" element={<Dashboard />} />
-        <Route path="*" element={<Error />}/>
+        <Route path="success" element={<RegistrationSuccess />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
