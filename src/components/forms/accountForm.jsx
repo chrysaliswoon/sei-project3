@@ -9,6 +9,7 @@ export default function AccountForm({profile}) {
 
   const onSubmit = async (event) => {
     const URL = BACKEND + "new/register"
+    console.log({ ...profile, ...event });
     fetch(URL, {
       method: "POST",
       body: JSON.stringify({...profile, ...event}),
@@ -95,7 +96,7 @@ export default function AccountForm({profile}) {
               })}
             />
           </div>
-          <Link to="/success">
+          {/* <Link to="/success"> */}
           <Button
             css="md:w-full bg-gray-900 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
             type="submit"
@@ -103,7 +104,7 @@ export default function AccountForm({profile}) {
             id="submit"
             description="Submit"
           />
-          </Link>
+          {/* </Link> */}
         </div>
       </form>
     </div>
