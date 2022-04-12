@@ -5,8 +5,10 @@ import AccountForm from "../components/forms/accountForm";
 
 export default function RegisterPage() {
   const [registerStage, setRegisterStage] = useState(0);
-  const [profile, setProfile] = useState();
-  const [account, setAccount] = useState();
+  const [profile, setProfile] = useState([]);
+  const addToProfile = data => {
+    setProfile([...profile, data])
+  }
 
   return (
     <div className="bg-gray-100">
@@ -16,7 +18,10 @@ export default function RegisterPage() {
           <h1 className="text-center uppercase tracking-wide text-black text-xl font-bold mb-2 py-5">
             Registration Form - User Profile
           </h1>
-          <RegisterForm profile={setProfile} nextStage={()=>setRegisterStage(page => page + 1)} />
+          <RegisterForm
+            profile={addToProfile}
+            nextStage={() => setRegisterStage((page) => page + 1)}
+          />
         </div>
       ) : (
         <div className="Account Setup">
@@ -24,10 +29,8 @@ export default function RegisterPage() {
           <h1 className="text-center uppercase tracking-wide text-black text-xl font-bold mb-2 py-5">
             Registration Form - Account Setup
           </h1>
-          <AccountForm profile={setAccount}/>
-          {/* <AccountForm profile {...profile}/>  */}
+          <AccountForm profile={addToProfile} />
           <pre>{JSON.stringify(profile, null, 2)}</pre>
-          <pre>{JSON.stringify(account, null, 2)}</pre>
         </div>
       )}
     </div>
