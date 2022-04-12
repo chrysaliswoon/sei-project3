@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import RegisterForm from "../components/forms/registerForm";
 import AccountForm from "../components/forms/accountForm";
+import Button from "../components/buttons/button"
 
 export default function RegisterPage() {
   const [registerStage, setRegisterStage] = useState(0);
-  const [profile, setProfile] = useState([]);
+  const [profile, setProfile] = useState({});
   const addToProfile = data => {
-    setProfile([...profile, data])
+    setProfile({...profile, ...data})
   }
 
   return (
@@ -29,7 +30,7 @@ export default function RegisterPage() {
           <h1 className="text-center uppercase tracking-wide text-black text-xl font-bold mb-2 py-5">
             Registration Form - Account Setup
           </h1>
-            <AccountForm profile={addToProfile} />
+          <AccountForm profile={addToProfile} />
           <pre>{JSON.stringify(profile, null, 2)}</pre>
         </div>
       )}
@@ -38,14 +39,3 @@ export default function RegisterPage() {
 }
 
 
-
-// const parentObject = [
-//   {
-//     name: "kkwoo1",
-//     rich: false,
-//     accounts: {
-//       bankOne: "POSB",
-//       bankTwo: "OCBC",
-//     },
-//   },
-// ];

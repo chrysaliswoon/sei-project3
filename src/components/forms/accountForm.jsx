@@ -2,9 +2,10 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import Button from '../buttons/button'
 import { BACKEND } from "../../utils";
+import { Link } from "react-router-dom";
 
 export default function AccountForm({profile}) {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = async (event) => {
     const URL = BACKEND + "new/register"
@@ -16,6 +17,7 @@ export default function AccountForm({profile}) {
       },
     })
     profile(event)
+    // reset(event);
   };
 
   return (
@@ -51,7 +53,7 @@ export default function AccountForm({profile}) {
               <select
                 className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
                 id="accountType"
-                {...register("accountType", {required: true})}
+                {...register("accountType", { required: true })}
               >
                 <option value="debit">Debit</option>
                 <option value="credit">Credit</option>
@@ -78,22 +80,23 @@ export default function AccountForm({profile}) {
             />
           </div>
           <div className="-mx-3 md:flex mb-6">
-              <label
-                className="uppercase tracking-wide text-black text-xs font-bold mb-2"
-                htmlFor="accountBalance"
-              >
-                Account Initial Balance
-              </label>
-              <input
-                className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
-                type="text"
-                name="accountBalance"
-                id="accountBalance"
-                {...register("accountBalance", {
-                  required: true,
-                })}
-              />
-            </div>
+            <label
+              className="uppercase tracking-wide text-black text-xs font-bold mb-2"
+              htmlFor="accountBalance"
+            >
+              Account Initial Balance
+            </label>
+            <input
+              className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
+              type="text"
+              name="accountBalance"
+              id="accountBalance"
+              {...register("accountBalance", {
+                required: true,
+              })}
+            />
+          </div>
+          {/* <Link to="/"> */}
           <Button
             css="md:w-full bg-gray-900 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
             type="submit"
@@ -101,6 +104,7 @@ export default function AccountForm({profile}) {
             id="submit"
             description="Submit"
           />
+          {/* </Link> */}
         </div>
       </form>
     </div>
