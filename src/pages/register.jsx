@@ -36,3 +36,16 @@ export default function RegisterPage() {
     </div>
   );
 }
+
+
+
+// const parentObject = [
+//   {
+//     name: "kkwoo1",
+//     rich: false,
+//     accounts: {
+//       bankOne: "POSB",
+//       bankTwo: "OCBC",
+//     },
+//   },
+// ];
