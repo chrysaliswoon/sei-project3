@@ -1,5 +1,6 @@
 import SideNavigation from '../components/navigation/navbar'
 import Button from '../components/buttons/button'
+import Accounts from '../components/features/accountOverview/accounts'
 
 export default function Dashboard() {
   return (
@@ -12,8 +13,11 @@ export default function Dashboard() {
         />
       </div>
       <div className="w-md h-full p-4 m-8 overflow-y-auto">
-        <h1 className="">Financial Dashboard</h1>
+        <h1 className="uppercase font-bold">Financial Dashboard</h1>
         <p>Get an overview of your financial transactions here</p>
+        <div>
+          <Accounts />
+        </div>
       </div>
     </div>
   );

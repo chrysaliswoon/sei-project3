@@ -23,8 +23,6 @@ root.render(
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
-        {/* <Route path="accountSetup" element={<AccountSetup />} /> */}
-        {/* <Route path="accountDetails" element={<AccountDetails />} /> */}
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="*" element={<Error />}/>
       </Routes>
