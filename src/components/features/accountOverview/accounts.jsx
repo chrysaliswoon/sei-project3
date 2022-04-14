@@ -1,12 +1,18 @@
+import React, { useState } from "react";
 import Cards from "../accountOverview/cardsOverview";
 import data from "../../../testData/cards"
 
 export default function Accounts() {
-  // const [balance, setBalance] = useState(data)
-  const cardBalance =
-    data.map(({ accountBalance }) => (
-        <h3>${accountBalance}</h3>
-    ));
+  const [balance, setBalance] = useState(data[0])
+  const handleClick = (dataID) => setBalance(dataID)
+  console.log(balance)
+  console.log(handleClick)
+
+  // const cardBalance =
+  //   data.map(({ accountBalance }) => (
+  //       <li>${accountBalance}</li>
+  //   ));
+  
   
   return (
     <div className="grid grid-cols-2 gap-4 py-8">
@@ -15,7 +21,7 @@ export default function Accounts() {
         <Cards />
       </div>
       <div>
-        {cardBalance}
+        <h3>{balance.accountBalance}</h3>
         <p>Current balance</p>
         <h3>$1,430</h3>
         <p>Income</p>

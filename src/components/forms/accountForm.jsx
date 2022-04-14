@@ -11,16 +11,30 @@ export default function AccountForm({ profile }) {
     formState: { errors },
   } = useForm();
 
+
   const onSubmit = async (event) => {
     const URL = BACKEND + "new/register";
-    console.log({ ...profile, ...event });
+    const data = { ...profile, ...event }
+    console.log(data);
+
     fetch(URL, {
       method: "POST",
-      body: JSON.stringify({ ...profile, ...event }),
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: "same-origin",
       headers: {
         "Content-Type": "application/json",
       },
-    });
+      body: JSON.stringify(data),
+    })
+    .then(onSubmit => onSubmit.json())
+    .then(data => {
+    console.log('Success', data) // Change this into a success page or pop-up
+    })
+      .catch((error) => {
+        console.log('Error:', error)
+    })
+    // return onSubmit.json(); // parses JSON response into native JS objects
   };
 
   return (
@@ -109,7 +123,7 @@ export default function AccountForm({ profile }) {
               <p>This field is required</p>
             )}
           </div>
-          <Link to="/success">
+          {/* <Link to="/success"> */}
           <Button
             css="md:w-full bg-gray-900 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
             type="submit"
@@ -117,7 +131,7 @@ export default function AccountForm({ profile }) {
             id="submit"
             description="Submit"
           />
-          </Link>
+          {/* </Link> */}
         </div>
       </form>
     </div>
