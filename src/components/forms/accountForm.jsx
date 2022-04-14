@@ -28,7 +28,8 @@ export default function AccountForm({ profile }) {
       body: JSON.stringify(data),
     })
     .then(onSubmit => onSubmit.json())
-    .then(data => {
+      .then(data => {
+      <Link to="/success"></Link>
     console.log('Success', data) // Change this into a success page or pop-up
     })
       .catch((error) => {
