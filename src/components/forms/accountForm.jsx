@@ -2,9 +2,10 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import Button from "../buttons/button";
 import { BACKEND } from "../../utils";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function AccountForm({ profile }) {
+  let navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -29,8 +30,8 @@ export default function AccountForm({ profile }) {
     })
     .then(onSubmit => onSubmit.json())
       .then(data => {
-      <Link to="/success"></Link>
-    console.log('Success', data) // Change this into a success page or pop-up
+        console.log('Success', data) // Change this into a success page or pop-up
+      navigate("/success")
     })
       .catch((error) => {
         console.log('Error:', error)
