@@ -10,11 +10,11 @@ export default function RegistrationSuccess() {
             <img
                 className="justify-center"
                 src={SuccessImage} alt="success registration" />
-          <Link
+          {/* <Link
             to="/"
-          >
+          > */}
             Click here to login to your account
-          </Link>
+          {/* </Link> */}
       </div>
     );
 }

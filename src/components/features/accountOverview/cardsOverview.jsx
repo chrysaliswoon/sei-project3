@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import cardImages from "../../../testData/cards";
+import data from "../../../testData/cards";
 
 export default function Cards() {
-    const cards = cardImages.map(({ url, cardName, cardDesc }) => (
-      <div>
+    const cards = data.map(({ url, cardName, cardDesc, id }) => (
+      <div key={id}>
         <img src={url} alt={cardName} />
         <p className={cardDesc}>{cardDesc}</p>
       </div>
@@ -13,7 +13,11 @@ export default function Cards() {
 
   return (
     <div>
-      <Carousel width="300px" showArrows={true}>
+      <Carousel
+        width="300px"
+        showArrows={true}
+        emulateTouch={true}
+      >
         {cards}
       </Carousel>
     </div>
