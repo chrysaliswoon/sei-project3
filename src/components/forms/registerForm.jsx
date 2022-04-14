@@ -21,14 +21,6 @@ export default function RegisterForm({profile, nextStage}) {
   email.current = watch("email", "");
 
   const onSubmit = async (event) => {
-    // const URL = BACKEND + "new/register"
-    //   fetch(URL, {
-    //   method: "POST",
-    //   body: JSON.stringify(event),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // })
     profile(event)
     nextStage()
   };
@@ -54,9 +46,6 @@ export default function RegisterForm({profile, nextStage}) {
               })}
             />
             {errors?.name?.type === "required" && <p>This field is required</p>}
-            {errors?.name?.type === "pattern" && (
-              <p>Alphabetical characters only</p>
-            )}
           </div>
           <div className="-mx-3 md:flex mb-6">
             <div className="md:w-1/2 px-3 mb-6 md:mb-0">
