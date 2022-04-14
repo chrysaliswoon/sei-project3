@@ -8,11 +8,11 @@ import reportWebVitals from "./unitTest/reportWebVitals";
 //? Import Pages
 import LoginPage from "./pages/login";
 import RegisterPage from './pages/register'
-// import AccountSetup from './pages/accountSetup'
-// import AccountDetails from "./pages/accountDetails";
 import Dashboard from './pages/dashboard'
 import Error from "./pages/error";
 import RegistrationSuccess from "./pages/sucess";
+import Transaction from "./pages/transactions"
+import Finances from "./pages/finances";
 
 //? New version of React
 const rootElement = document.getElementById("root");
@@ -26,6 +26,8 @@ root.render(
         <Route path="register" element={<RegisterPage />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="success" element={<RegistrationSuccess />} />
+        <Route path="form" element={<Finances />} />
+        <Route path="transactions" element={<Transaction />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>

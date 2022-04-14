@@ -30,7 +30,7 @@ export default function RegisterPage() {
             Registration Form - Account Setup
           </h1>
             <AccountForm profile={profile} />
-          <pre>{JSON.stringify(profile, null, 2)}</pre>
+          {/* <pre>{JSON.stringify(profile, null, 2)}</pre> */}
         </div>
       )}
     </div>

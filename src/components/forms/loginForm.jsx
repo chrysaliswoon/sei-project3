@@ -23,6 +23,7 @@ export default function LoginForm() {
     fetch(URL, {
       method: "POST",
       body: JSON.stringify(event),
+      // credentials: "include",
       headers: {
         "Content-Type": "application/json",
       }

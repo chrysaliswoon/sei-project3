@@ -2,9 +2,6 @@ import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import Button from "../buttons/button";
 
-// import {} from 'dotenv/config' 
-import { BACKEND } from "../../utils";
-
 export default function RegisterForm({profile, nextStage}) {
 
   const {
