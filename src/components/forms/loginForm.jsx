@@ -14,7 +14,6 @@ export default function LoginForm({setLoggedIn}) {
 
   const {
     register,
-    handleSubmit,
   } = useForm();
 
   const handleLogin = (event) => {
@@ -44,21 +43,6 @@ export default function LoginForm({setLoggedIn}) {
       })
     .catch((err) => console.log(err))
   }
-
-  // const onSubmit = async (event) => {
-  //   const URL = BACKEND + "dashboard"
-  //   // console.log(URL)
-  //   fetch(URL, {
-  //     method: "POST",
-  //     body: JSON.stringify(event),
-  //     // credentials: "include",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     }
-  //   })
-  //   // console.log(event)
-  //   navigate("/dashboard")
-  // }
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full">
