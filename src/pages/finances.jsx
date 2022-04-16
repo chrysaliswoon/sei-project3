@@ -7,18 +7,22 @@ export default function () {
   const [account, setAccount] = useState([]);
   // console.log(account[0].account);
 
-  const accountData = () => {
-    console.log(accountData);
+  const getData = async (response) => {
+    const data = {};
 
-    fetch(URL)
-      .then((response) => response.json())
-      .then((data) =>
-        setAccount({
-          account: data,
-        })
-      );
-  };
-  
+    fetch(URL, {
+      method: "GET",
+      mode: "cors",
+      cache: "no-cache",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+      return response.json()
+    })
+  }
+
   return (
     <div className="bg-gray-100">
       <h1 className="text-center uppercase tracking-wide text-black text-xl font-bold mb-2 py-5">

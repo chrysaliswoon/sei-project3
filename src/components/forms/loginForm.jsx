@@ -25,7 +25,7 @@ export default function LoginForm({setLoggedIn}) {
       email: email,
       password: password,
     }
-    const URL = "http://localhost:2000/" + "dashboard";
+    const URL = BACKEND + "dashboard";
     console.log(URL)
 
     fetch(URL, {
