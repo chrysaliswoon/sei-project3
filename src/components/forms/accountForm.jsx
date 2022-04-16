@@ -114,7 +114,7 @@ export default function AccountForm({ profile }) {
             </label>
             <input
               className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
-              type="text"
+              type="number"
               name="accountBalance"
               id="accountBalance"
               {...register("accountBalance", {
@@ -125,7 +125,6 @@ export default function AccountForm({ profile }) {
               <p>This field is required</p>
             )}
           </div>
-          {/* <Link to="/success"> */}
           <Button
             css="md:w-full bg-gray-900 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
             type="submit"
@@ -133,7 +132,6 @@ export default function AccountForm({ profile }) {
             id="submit"
             description="Submit"
           />
-          {/* </Link> */}
         </div>
       </form>
     </div>
