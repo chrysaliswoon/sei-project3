@@ -14,26 +14,26 @@ export default function TransactionForm({ account }) {
 
   const URL = BACKEND + "";
 
-  const onSubmit = async (event) => {
-        const data = { ...data };
-    fetch(URL, {
-      method: "POST",
-      mode: "cors",
-      cache: "no-cache",
-      credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((onSubmit) => onSubmit.json())
-      .then((data) => {
-        console.log("Success", data);
-      })
-      .catch((error) => {
-        console.log("Error:", error);
-      });
-  };
+  // const onSubmit = async (event) => {
+  //       const data = { ...data };
+  //   fetch(URL, {
+  //     method: "POST",
+  //     mode: "cors",
+  //     cache: "no-cache",
+  //     credentials: "same-origin",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(data),
+  //   })
+  //     .then((onSubmit) => onSubmit.json())
+  //     .then((data) => {
+  //       console.log("Success", data);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error:", error);
+  //     });
+  // };
 
 
   return (
