@@ -4,7 +4,7 @@ import TransactionForm from "../components/forms/transactionForm";
 import SideNavigation from "../components/navigation/navbar";
 
 export default function () {
-  const URL = BACKEND + "/transactions";
+  const URL = BACKEND + "transactions";
   const [account, setAccount] = useState([]);
 
   const getData = () => {
@@ -12,7 +12,7 @@ export default function () {
       method: "GET",
       mode: "cors",
       cache: "no-cache",
-      credentials: "same-origin",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },

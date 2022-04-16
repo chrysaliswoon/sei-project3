@@ -31,7 +31,7 @@ export default function TransactionForm({ account }) {
       transactionDetails: transactionDetails,
     }
 
-    const URL = "http://localhost:2000" + "/transactions/new";
+    const URL = BACKEND + "transactions/new";
     console.log(URL)
 
     fetch(URL, {
