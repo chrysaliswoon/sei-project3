@@ -39,7 +39,8 @@ export default function LoginForm() {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          console.log(data)
+          console.log("Success", data);
+          navigate("/dashboard");
       }
       })
     .catch((err) => console.log(err))
