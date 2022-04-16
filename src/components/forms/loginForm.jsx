@@ -17,20 +17,48 @@ export default function LoginForm() {
     handleSubmit,
   } = useForm();
 
-  const onSubmit = async (event) => {
-    const URL = BACKEND + "dashboard"
-    // console.log(URL)
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    const user = {
+      email: email,
+      password: password,
+    }
+    const URL = BACKEND + "/login"
+    console.log(URL)
+
     fetch(URL, {
       method: "POST",
-      body: JSON.stringify(event),
-      // credentials: "include",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
-      }
+      },
+      body: JSON.stringify(user),
     })
-    // console.log(event)
-    navigate("/dashboard")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          console.log(data)
+      }
+      })
+    .catch((err) => console.log(err))
   }
+
+  // const onSubmit = async (event) => {
+  //   const URL = BACKEND + "dashboard"
+  //   // console.log(URL)
+  //   fetch(URL, {
+  //     method: "POST",
+  //     body: JSON.stringify(event),
+  //     // credentials: "include",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     }
+  //   })
+  //   // console.log(event)
+  //   navigate("/dashboard")
+  // }
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full">
@@ -38,7 +66,7 @@ export default function LoginForm() {
         <img className="w-full h-full object-cover" src={loginImg} alt="" />
       </div>
       <div className="bg-gray-800 flex flex-col justify-center">
-        <form onSubmit={handleSubmit(onSubmit)}
+        <form onSubmit={handleLogin}
           className="max-w-[400px] w-full mx-auto bg-gray-900 p-8 px-8 rounded-1g"
           id="login"
           method="get"
