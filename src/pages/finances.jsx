@@ -8,7 +8,7 @@ export default function () {
   // console.log(account[0].account);
 
   const accountData = () => {
-    // console.log(accountData);
+    console.log(accountData);
 
     fetch(URL)
       .then((response) => response.json())
@@ -18,11 +18,7 @@ export default function () {
         })
       );
   };
-
-  // const accountList = ["test1", "test2"];
-
-
-
+  
   return (
     <div className="bg-gray-100">
       <h1 className="text-center uppercase tracking-wide text-black text-xl font-bold mb-2 py-5">
