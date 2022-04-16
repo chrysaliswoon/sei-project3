@@ -7,21 +7,21 @@ export default function () {
   const [account, setAccount] = useState([]);
   // console.log(account[0].account);
 
-  // const getData = async (response) => {
-  //   const data = {};
+  const getData = async (response) => {
+    const data = {};
 
-  //   fetch(URL, {
-  //     method: "GET",
-  //     mode: "cors",
-  //     cache: "no-cache",
-  //     credentials: "same-origin",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(data),
-  //   })
-  //   return response.json()
-  // }
+    fetch(URL, {
+      method: "GET",
+      mode: "cors",
+      cache: "no-cache",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+    return response.json()
+  }
 
   return (
     <div className="bg-gray-100">
