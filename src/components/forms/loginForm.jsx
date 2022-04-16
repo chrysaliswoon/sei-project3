@@ -25,7 +25,7 @@ export default function LoginForm() {
       email: email,
       password: password,
     }
-    const URL = BACKEND + "/login"
+    const URL = BACKEND + "dashboard"
     console.log(URL)
 
     fetch(URL, {
