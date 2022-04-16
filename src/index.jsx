@@ -2,35 +2,17 @@ import "tailwindcss/tailwind.css";
 import React from "react";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
 import reportWebVitals from "./unitTest/reportWebVitals";
 //? Import Pages
-import LoginPage from "./pages/login";
-import RegisterPage from './pages/register'
-import Dashboard from './pages/dashboard'
-import Error from "./pages/error";
-import RegistrationSuccess from "./pages/sucess";
-import Transaction from "./pages/transactions"
-import Finances from "./pages/finances";
+import App from "./app"
 
 //? New version of React
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
-
+  
 root.render(
   <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LoginPage />} />
-        <Route path="register" element={<RegisterPage />} />
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="success" element={<RegistrationSuccess />} />
-        <Route path="form" element={<Finances />} />
-        <Route path="transactions" element={<Transaction />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
-    </BrowserRouter>
+    <App />
   </StrictMode>
 );
 

@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { BACKEND } from "../../utils";
 
 
-export default function LoginForm() {
+export default function LoginForm({setLoggedIn}) {
   let navigate = useNavigate();
 
   const {
@@ -37,11 +37,10 @@ export default function LoginForm() {
       body: JSON.stringify(user),
     })
       .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
+      .then(data => {
           console.log("Success", data);
-          navigate("/dashboard");
-      }
+        setLoggedIn(true);
+        navigate("/dashboard");
       })
     .catch((err) => console.log(err))
   }

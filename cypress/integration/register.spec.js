@@ -32,6 +32,7 @@ describe("registerPage", () => {
         // cy.get("#submit").click();
     });
     it("failRegister", () => {
+    const randomEmail = faker.internet.email();
       cy.visit("http://localhost:3000/register");
       cy.get("#email").type(randomEmail);
       cy.get("#confirmEmail").type(randomEmail);
