@@ -3,6 +3,10 @@ import { BACKEND } from "../../utils";
 import { useForm } from "react-hook-form";
 
 export default function TransactionForm({ account }) {
+    const accountName = account.map((accounts, i) => (
+      <option value={accounts.account}>{accounts.account}</option>
+    ));
+  
   const {
     register,
     formState: { errors },
@@ -63,7 +67,7 @@ export default function TransactionForm({ account }) {
         </div>
         <div>
           <label htmlFor="account">Account: </label>
-          <select>{account}</select>
+          <select>{accountName}</select>
         </div>
         <div>
           <label htmlFor="amount">Amount: $</label>
