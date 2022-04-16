@@ -39,7 +39,7 @@ export default function LoginForm({setLoggedIn}) {
       .then((res) => res.json())
       .then(data => {
           console.log("Success", data);
-        setLoggedIn(true);
+        // setLoggedIn(true);
         navigate("/dashboard");
       })
     .catch((err) => console.log(err))
