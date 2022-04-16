@@ -10,6 +10,9 @@ import Error from "./pages/error";
 import RegistrationSuccess from "./pages/sucess";
 import Transaction from "./pages/transactions";
 import Finances from "./pages/finances";
+import ProfilePage from "./pages/profile";
+import AccountPage from "./pages/accountOverview";
+import GoalsPage from "./pages/goals";
 
 
 export default function App() {
@@ -27,6 +30,9 @@ export default function App() {
           <Route path="success" element={<RegistrationSuccess />} />
           <Route path="form" element={<Finances />} />
           <Route path="transactions" element={<Transaction />} />
+          <Route path="profile" element={<ProfilePage />} />
+          <Route path="accounts" element={<AccountPage />} />
+          <Route path="goals" element={<GoalsPage />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>
