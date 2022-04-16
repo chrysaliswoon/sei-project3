@@ -1,10 +1,13 @@
 import Button from "../buttons/button";
 import { BACKEND } from "../../utils";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 export default function TransactionForm({ account }) {
-    const accountName = account.map((accounts, i) => (
-      <option value={accounts.account}>{accounts.account}</option>
+  let navigate = useNavigate()
+
+    const accountName = account.map((accounts, index) => (
+      <option key={index} value={accounts.account}>{accounts.account}</option>
     ));
   
   const {
@@ -12,47 +15,49 @@ export default function TransactionForm({ account }) {
     formState: { errors },
   } = useForm();
 
-  const URL = BACKEND + "";
+  
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const date = event.target.date.value
+    // const account = event.target.account.value;
+    const amount = event.target.amount.value
+    const recipient = event.target.recipient.value
+    const transactionDetails = event.target.transaction.value
+    const newTransaction = {
+      date: date,
+      account: account,
+      amount: amount,
+      recipient: recipient,
+      transactionDetails: transactionDetails,
+    }
 
-  // const onSubmit = async (event) => {
-  //       const data = { ...data };
-  //   fetch(URL, {
-  //     method: "POST",
-  //     mode: "cors",
-  //     cache: "no-cache",
-  //     credentials: "same-origin",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(data),
-  //   })
-  //     .then((onSubmit) => onSubmit.json())
-  //     .then((data) => {
-  //       console.log("Success", data);
-  //     })
-  //     .catch((error) => {
-  //       console.log("Error:", error);
-  //     });
-  // };
+    const URL = "http://localhost:2000" + "/transactions/new";
+    console.log(URL)
+
+    fetch(URL, {
+      method: "POST",
+      mode: "cors",
+      cache: "no-cache",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newTransaction),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Success", data);
+        navigate("/transactions")
+      })
+      .catch((error) => {
+        console.log("Error:", error);
+      });
+  };
 
 
   return (
     <div className="mx-auto max-w-6xl bg-gray-200 py-20 px-12 lg:px-24 shadow-xl mb-24">
-      <form>
-        {/* <Button
-          css="bg-pink-500 font-bold py-2 px-4 border-b-4 rounded-full"
-          type="submit"
-          name="expenseSubmit"
-          id="expenseSubmit"
-          description="Expense"
-        />
-        <Button
-          css="bg-green-500 font-bold py-2 px-4 border-b-4 rounded-full"
-          type="submit"
-          name="incomeSubmit"
-          id="incomeSubmit"
-          description="Income"
-        /> */}
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="date">Date of Transaction: </label>
           <input

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BACKEND } from "../utils";
 import TransactionForm from "../components/forms/transactionForm";
+import SideNavigation from "../components/navigation/navbar";
 
 export default function () {
   const URL = BACKEND + "/transactions";
@@ -27,11 +28,18 @@ export default function () {
   console.log(account);
 
   return (
-    <div className="bg-gray-100">
-      <h1 className="text-center uppercase tracking-wide text-black text-xl font-bold mb-2 py-5">
-        New Transaction
-      </h1>
-      <TransactionForm account={account} />
+    <div className="flex">
+      <div className="flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto border-r">
+        <SideNavigation />
+      </div>
+      <div className="p-4 m-8 overflow-y-auto">
+        <h1 className="uppercase font-bold">New Transaction</h1>
+        <p>Hi (insert user name), please select an account which the transaction was made</p>
+        <div className="py-8">
+          <TransactionForm account={account} />;
+        </div>
+      </div>
     </div>
   );
 }
+
