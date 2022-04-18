@@ -56,9 +56,9 @@ export default function TransactionForm({ account }) {
 
 
   return (
-    <div className="mx-auto max-w-6xl bg-gray-200 py-20 px-12 lg:px-24 shadow-xl mb-24">
+    <div className="mx-auto max-w-6xl bg-gray-200 py-10 px-12 lg:px-24 shadow-xl mb-24">
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="my-5">
           <label htmlFor="date">Date of Transaction: </label>
           <input
             type="date"
@@ -70,24 +70,24 @@ export default function TransactionForm({ account }) {
           />
           {errors?.date?.type === "required" && <p>This field is required</p>}
         </div>
-        <div>
+        <div className="my-5">
           <label htmlFor="account">Account: </label>
           <select>{accountName}</select>
         </div>
-        <div>
+        <div className="my-5">
           <label htmlFor="amount">Amount: $</label>
           <input type="number" name="amount" id="amount" />
         </div>
-        <div>
+        <div className="my-5">
           <label htmlFor="recipient">Recipient (if applicable): </label>
           <input type="text" name="recipient" id="recipient" />
         </div>
-        <div>
+        <div className="my-5">
           <label htmlFor="transaction">Transaction Details: </label>
           <input type="text" name="transaction" id="transaction" />
         </div>
         <Button
-          css="md:w-full bg-gray-900 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
+          css="md:w-full bg-gray-900 text-white font-bold py-2 px-4 my-5 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
           type="submit"
           name="submit"
           id="submit"
@@ -95,5 +95,5 @@ export default function TransactionForm({ account }) {
         />
       </form>
     </div>
-  )
+  );
 }
