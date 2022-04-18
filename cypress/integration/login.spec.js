@@ -13,11 +13,11 @@ describe("loginPage", () => {
     cy.get("#password").type("123");
     cy.get("#login").click();
   });
-//   it("failLogin", () => {
-//     const randomEmail = faker.internet.email();
-//     cy.visit(URL);
-//     cy.get("#email").type(randomEmail);
-//     cy.get("#password").type("123");
-//     cy.get("#login").click();
-//   });
+  it("failLogin", () => {
+    const randomEmail = faker.internet.email();
+    cy.visit(URL);
+    cy.get("#email").type(randomEmail);
+    cy.get("#password").type("123");
+    cy.get("#login").click();
+  });
 });

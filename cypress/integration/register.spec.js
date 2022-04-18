@@ -29,16 +29,16 @@ describe("registerPage", () => {
         cy.get("#accountName").type(randomName);
         cy.get("#accountDescription").type(randomDesc);
         cy.get("#accountBalance").type(randomBal);
-        // cy.get("#submit").click();
+        cy.get("#submit").click();
     });
-    it("failRegister", () => {
-    const randomEmail = faker.internet.email();
-      cy.visit("http://localhost:3000/register");
-      cy.get("#email").type(randomEmail);
-      cy.get("#confirmEmail").type(randomEmail);
-      cy.get("#password").type("123");
-      cy.get("#confirmPassword").type("123");
-        cy.get("#register").click();
-    cy.contains("This field is required");
-    });
+    // it("failRegister", () => {
+    // const randomEmail = faker.internet.email();
+    //   cy.visit("http://localhost:3000/register");
+    //   cy.get("#email").type(randomEmail);
+    //   cy.get("#confirmEmail").type(randomEmail);
+    //   cy.get("#password").type("123");
+    //   cy.get("#confirmPassword").type("123");
+    //     cy.get("#register").click();
+    // cy.contains("This field is required");
+    // });
 }) 

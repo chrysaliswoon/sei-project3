@@ -30,13 +30,12 @@ export default function AccountForm({ profile }) {
     })
     .then(onSubmit => onSubmit.json())
       .then(data => {
-        console.log('Success', data) // Change this into a success page or pop-up
+        console.log('Success', data) 
       navigate("/success")
     })
       .catch((error) => {
         console.log('Error:', error)
     })
-    // return onSubmit.json(); // parses JSON response into native JS objects
   };
 
   return (
