@@ -1,4 +1,5 @@
 import SideNavigation from "../components/navigation/navbar";
+import ProfileInfo from "../components/features/profile/profileInfo"
 
 export default function ProfilePage() {
   return (
@@ -9,7 +10,7 @@ export default function ProfilePage() {
       <div className="w-md h-full p-4 m-8 overflow-y-auto">
         <h1 className="uppercase font-bold">Profile Page</h1>
         <div>
-          <p>This shows the profile info</p>
+          <ProfileInfo />
         </div>
       </div>
     </div>

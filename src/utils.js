@@ -1,1 +1,1 @@
-export const BACKEND = process.env.REACT_APP_BACKEND ?? "https://moneybankbackend.herokuapp.com"
+export const BACKEND = process.env.REACT_APP_BACKEND ?? "http://localhost:3000/"

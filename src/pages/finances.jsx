@@ -7,6 +7,10 @@ export default function () {
   const URL = BACKEND + "transactions";
   const [account, setAccount] = useState([]);
 
+  const username = account.map((accounts, index) => (
+    <p key={index} value={accounts.name}>{accounts.name}</p>
+  ));
+
   const getData = () => {
     fetch(URL, {
       method: "GET",
@@ -34,7 +38,7 @@ export default function () {
       </div>
       <div className="p-4 m-8 overflow-y-auto">
         <h1 className="uppercase font-bold">New Transaction</h1>
-        <p>Hi (insert user name), please select an account which the transaction was made</p>
+        <p>Hi {username}, please select an account which the transaction was made</p>
         <div className="py-8">
           <TransactionForm account={account} />;
         </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Cards from "../accountOverview/cardsOverview";
+import Cards from "../dashboard/cardsOverview";
 import data from "../../../testData/cards"
 
 export default function Accounts() {
@@ -7,12 +7,6 @@ export default function Accounts() {
   const handleClick = (dataID) => setBalance(dataID)
   console.log(balance)
   console.log(handleClick)
-
-  // const cardBalance =
-  //   data.map(({ accountBalance }) => (
-  //       <li>${accountBalance}</li>
-  //   ));
-  
   
   return (
     <div className="grid grid-cols-2 gap-4 py-8">

@@ -19,7 +19,7 @@ export default function TransactionForm({ account }) {
   const handleSubmit = (event) => {
     event.preventDefault()
     const date = event.target.date.value
-    // const account = event.target.account.value;
+    const account = event.target.account.value;
     const amount = event.target.amount.value
     const recipient = event.target.recipient.value
     const transactionDetails = event.target.transaction.value
@@ -95,5 +95,5 @@ export default function TransactionForm({ account }) {
         />
       </form>
     </div>
-  );
+  )
 }

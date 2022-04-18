@@ -1,6 +1,5 @@
 import SideNavigation from '../components/navigation/navbar'
-import Button from '../components/buttons/button'
-import Accounts from '../components/features/accountOverview/accounts'
+import Accounts from '../components/features/dashboard/accounts'
 
 export default function Dashboard() {
   return (
