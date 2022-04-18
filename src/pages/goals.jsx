@@ -2,7 +2,7 @@ import SideNavigation from "../components/navigation/navbar";
 
 export default function GoalsPage() {
   return (
-    <div className="flex">
+    <div className="flex bg-gray-100">
       <div className="flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto border-r">
         <SideNavigation />
       </div>

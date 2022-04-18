@@ -25,7 +25,7 @@ describe("registerPage", () => {
         cy.get("#confirmEmail").type(randomEmail);
         cy.get("#password").type("123");
         cy.get("#confirmPassword").type("123");
-        cy.get("#submit").click()
+        cy.get("#register").click()
         cy.get("#accountName").type(randomName);
         cy.get("#accountDescription").type(randomDesc);
         cy.get("#accountBalance").type(randomBal);
@@ -38,7 +38,7 @@ describe("registerPage", () => {
       cy.get("#confirmEmail").type(randomEmail);
       cy.get("#password").type("123");
       cy.get("#confirmPassword").type("123");
-        cy.get("#submit").click();
+        cy.get("#register").click();
     cy.contains("This field is required");
     });
 }) 

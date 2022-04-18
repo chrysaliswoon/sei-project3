@@ -11,7 +11,7 @@ import RegistrationSuccess from "./pages/sucess";
 import Transaction from "./pages/transactions";
 import Finances from "./pages/finances";
 import ProfilePage from "./pages/profile";
-import AccountPage from "./pages/accountOverview";
+import AccountPage from "./pages/accounts";
 import GoalsPage from "./pages/goals";
 
 

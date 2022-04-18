@@ -126,25 +126,13 @@ export default function RegisterForm({profile, nextStage}) {
               {errors?.confirmPassword && <p>The passwords don't match</p>}
             </div>
           </div>
-          {/* <label
-            className="uppercase tracking-wide text-black text-xs font-bold mb-2"
-            htmlFor="image"
-          >
-            Upload image of account or card
-          </label>
-          <input
-            className="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3"
-            type="file"
-            name="image"
-            id="image"
-          ></input> */}
           <div className="-mx-3 md:flex mt-2">
             <div className="md:w-full px-3">
               <Button
                 css="md:w-full bg-gray-900 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
                 type="submit"
-                name="submit"
-                id="submit"
+                name="register"
+                id="register"
                 description="Submit"
               />
             </div>

@@ -42,8 +42,8 @@ export default function Transaction() {
       );
   
   return (
-    <div className="flex">
-      <div className="flex flex-col px-4 py-8 border-r flex-none">
+    <div className="flex bg-gray-100">
+      <div className="flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto border-r">
         <SideNavigation />
       </div>
       <div className="p-4 m-8 flex-auto w-64">

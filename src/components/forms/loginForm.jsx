@@ -51,7 +51,8 @@ export default function LoginForm({setLoggedIn}) {
         <img className="w-full h-full object-cover" src={loginImg} alt="" />
       </div>
       <div className="bg-gray-800 flex flex-col justify-center">
-        <form onSubmit={handleLogin}
+        <form
+          onSubmit={handleLogin}
           className="max-w-[400px] w-full mx-auto bg-gray-900 p-8 px-8 rounded-1g"
           id="login"
           method="get"
@@ -91,10 +92,13 @@ export default function LoginForm({setLoggedIn}) {
             </p>
             <a href="#">Forgot Password</a>
           </div>
-            <Button
-              css="w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50"
-              description="Sign In"
-            />
+          <Button
+            css="w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50"
+            type="submit"
+            name="login"
+            id="login"
+            description="Sign In"
+          />
           <nav>
             <Link to="/register" className="flex flex-col text-gray-400 py-2">
               New? Register here
