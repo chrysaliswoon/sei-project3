@@ -10,10 +10,16 @@ export default function TransactionTable() {
             Description
           </th>
           <th scope="col" className="px-6 py-3">
+            Category
+          </th>
+          <th scope="col" className="px-6 py-3">
             Amount
           </th>
           <th scope="col" className="px-6 py-3">
             <span className="sr-only">Edit</span>
+          </th>
+          <th scope="col" className="px-6 py-3">
+            <span className="sr-only">Delete</span>
           </th>
         </tr>
       </thead>
@@ -26,6 +32,7 @@ export default function TransactionTable() {
             1 Jan 2022
           </th>
           <td className="px-6 py-4">Tori Q - Dinner</td>
+          <td className="px-6 py-4">Food</td>
           <td className="px-6 py-4">$10.30</td>
           <td className="px-6 py-4 text-right">
             <a
@@ -33,6 +40,14 @@ export default function TransactionTable() {
               className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
             >
               Edit
+            </a>
+          </td>
+          <td className="px-6 py-4 text-right">
+            <a
+              href="#"
+              className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+            >
+              Delete
             </a>
           </td>
         </tr>
