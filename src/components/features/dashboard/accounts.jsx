@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Cards from "../dashboard/cardsOverview";
+import Cards from "./accountList";
 import data from "../../../testData/cards"
 
 export default function Accounts() {
