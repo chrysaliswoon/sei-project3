@@ -1,37 +1,7 @@
 import Button from "../../buttons/button";
-import { BACKEND } from "../../../utils";
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-export default function Profile({ profilePic }) {
-  const [user, setUser] = useState("");
-  const [email, setEmail] = useState("");
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault()
-  //   const profile = event.target.profile.value
-  //   console.log(profile)
-  // }
-
-  const getData = () => {
-    const URL = BACKEND + "transactions";
-    fetch(URL, {
-      method: "GET",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setUser(data.name);
-        setEmail(data.email);
-      })
-      .catch((err) => console.log(err));
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
+export default function Profile({ profilePic, user, email }) {
 
   return (
     <div className="h-screen w-full">
@@ -65,7 +35,7 @@ export default function Profile({ profilePic }) {
             <label htmlFor="photo">Profile Photo: </label>
             <input type="file" id="photo" name="photo"></input>
           <Button
-            css="bg-gray-900 text-white font-bold py-2 px-4 my-5 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
+            css="md:w-full bg-gray-900 text-white font-bold py-2 px-4 my-5 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
             type="submit"
             name="profile"
             id="profile"

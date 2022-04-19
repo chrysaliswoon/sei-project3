@@ -14,8 +14,8 @@ export default function TransactionForm({ account }) {
 
   const onSubmit = async (event) => {
     const URL = BACKEND + "transactions/new";
-    const newTransaction = { account, ...event }
-    console.log(newTransaction)
+    const newTransaction = { account, ...event };
+    console.log(newTransaction);
 
     fetch(URL, {
       method: "POST",
@@ -54,16 +54,13 @@ export default function TransactionForm({ account }) {
         </div>
         <div className="my-5">
           <label htmlFor="account">Account: </label>
-          <select
-            {...register("account")}
-          >
-            {account}
-          </select>
+          <select {...register("account")}>{account}</select>
         </div>
         <div className="my-5">
           <label htmlFor="amount">Amount: $</label>
           <input
             type="number"
+            step="any"
             name="amount"
             id="amount"
             {...register("amount", {
@@ -90,6 +87,26 @@ export default function TransactionForm({ account }) {
               required: true,
             })}
           />
+        </div>
+        <div className="my-5">
+          <p>Transaction Category</p>
+          <input
+            type="radio"
+            id="income"
+            name="category"
+            value="Income"
+            {...register("category")}
+          />
+          <label htmlFor="Income"> Income</label>
+          {"  "}
+          <input
+            type="radio"
+            id="expense"
+            name="category"
+            value="Expense"
+            {...register("category")}
+          />
+          <label htmlFor="Expense"> Expense</label>
         </div>
         <Button
           css="md:w-full bg-gray-900 text-white font-bold py-2 px-4 my-5 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"

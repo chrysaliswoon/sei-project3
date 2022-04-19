@@ -4,7 +4,7 @@ import TransactionTable from '../components/features/transactions/transactionTab
 import FinanceCharts from '../components/features/dashboard/financeChart';
 import Goals from '../components/features/dashboard/goals';
 
-export default function Dashboard() {
+export default function Dashboard({user}) {
   return (
     <div className="flex bg-gray-100 ">
       <div className="flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto border-r">
@@ -12,7 +12,7 @@ export default function Dashboard() {
       </div>
       <div className="p-4 m-8 flex-auto w-64">
         <h1 className="uppercase font-bold">Financial Dashboard</h1>
-        <p>Get an overview of your financial transactions here</p>
+        <p>Welcome back {user}! Here's a breakdown of this month's finances.</p>
         <div className="grid grid-cols-2 gap-4 ">
           <div className="bg-white-500 px-10 ">
             <Accounts />

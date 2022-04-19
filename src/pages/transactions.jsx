@@ -3,43 +3,25 @@ import TransactionTable from "../components/features/transactions/transactionTab
 import FilterNav from "../components/features/transactions/filter";
 import Button from "../components/buttons/button";
 
-export default function Transaction() {
+export default function Transaction({ user, account, transaction, date, amount }) {
   const button = (
     <Button
       css="bg-gray-900 text-white px-5 py-2 rounded-md text-sm font-medium"
-      description="Year"
+      description="All"
     />
-  )
+  );
     const button2 = (
       <Button
         css="bg-gray-900 text-white px-5 py-2 rounded-md text-sm font-medium"
-        description="Month"
+        description="Income"
       />
     );
     const button3 = (
       <Button
         css="bg-gray-900 text-white px-5 py-2 rounded-md text-sm font-medium"
-        description="Day"
+        description="Expense"
       />
     );
-      const button4 = (
-        <Button
-          css="bg-gray-900 text-white px-5 py-2 rounded-md text-sm font-medium"
-          description="All"
-        />
-      );
-      const button5 = (
-        <Button
-          css="bg-gray-900 text-white px-5 py-2 rounded-md text-sm font-medium"
-          description="Income"
-        />
-      );
-      const button6 = (
-        <Button
-          css="bg-gray-900 text-white px-5 py-2 rounded-md text-sm font-medium"
-          description="Expense"
-        />
-      );
   
   return (
     <div className="flex bg-gray-100">
@@ -47,16 +29,13 @@ export default function Transaction() {
         <SideNavigation />
       </div>
       <div className="p-4 m-8 flex-auto w-64">
-        <h1 className="uppercase font-bold">Financial Transactions</h1>
-        <p>Have an overview of your financial transactions here</p>
+        <h1 className="uppercase font-bold">{user} Transactions</h1>
+        <p>Have an overview of your financial transactions</p>
         <div className="py-5">
           <FilterNav button={button} button2={button2} button3={button3} />
         </div>
-        <div className="py-4">
-          <FilterNav button={button4} button2={button5} button3={button6} />
-        </div>
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-          <TransactionTable />
+          <TransactionTable date={date} account={account} transaction={transaction} amount={amount}/>
         </div>
       </div>
     </div>

@@ -2,7 +2,8 @@ import SideNavigation from "../components/navigation/navbar";
 import ProfileInfo from "../components/features/profile/profileInfo"
 import { useState } from "react";
 
-export default function ProfilePage() {
+export default function ProfilePage({user, email}) {
+
     const [profilePic, setprofilePic] = useState(
       "http://source.unsplash.com/500x500/?girl"
     );
@@ -13,6 +14,7 @@ export default function ProfilePage() {
     };
 
   console.log(profilePic);
+
   
   return (
     <div className="flex bg-gray-100 ">
@@ -22,7 +24,7 @@ export default function ProfilePage() {
       <div className="p-4 m-8 flex-auto w-64">
         <h1 className="uppercase font-bold">Profile Page</h1>
         <div>
-          <ProfileInfo profilePic={profilePic}/>
+          <ProfileInfo profilePic={profilePic} user={user} email={email}/>
         </div>
       </div>
     </div>
