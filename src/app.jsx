@@ -24,10 +24,11 @@ export default function App() {
         <Routes>
           <Route path="/" element={<LoginPage setLoggedIn={setLoggedIn} />} />
           <Route path="register" element={<RegisterPage />} />
-          <Route
+          {/* <Route
             path="dashboard"
-            element={loggedIn ? <Dashboard /> : <Dashboard />}
-          />
+            element={loggedIn ? <Dashboard /> : <LoginPage />}
+          /> */}
+          <Route path="dashboard" element={<Dashboard />} />
           <Route path="success" element={<RegistrationSuccess />} />
           <Route path="form" element={<Finances />} />
           <Route path="transactions" element={<Transaction />} />

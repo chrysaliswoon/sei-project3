@@ -8,13 +8,10 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { BACKEND } from "../../utils";
 
-
-export default function LoginForm({setLoggedIn}) {
+export default function LoginForm({ setLoggedIn }) {
   let navigate = useNavigate();
 
-  const {
-    register,
-  } = useForm();
+  const { register } = useForm();
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -23,11 +20,9 @@ export default function LoginForm({setLoggedIn}) {
     const user = {
       email: email,
       password: password,
-    }
-    
-    const URL = BACKEND + "dashboard";
-    console.log(URL)
+    };
 
+    const URL = BACKEND + "dashboard";
     fetch(URL, {
       method: "POST",
       credentials: "include",
@@ -37,13 +32,19 @@ export default function LoginForm({setLoggedIn}) {
       body: JSON.stringify(user),
     })
       .then((res) => res.json())
-      .then(data => {
-          console.log("Success", data);
-        setLoggedIn(true);
-        navigate("/dashboard");
+      .then((data) => {
+        // console.log("Success", data);
+        console.log(data.msg);
+        if (data.msg == "user not found" || data.msg == "Wrong Password") {
+          setLoggedIn(false);
+          navigate("/");
+        } else {
+          setLoggedIn(true);
+          navigate("/dashboard");
+        }
       })
-    .catch((err) => console.log(err))
-  }
+      .catch((err) => console.log("Error", err));
+  };
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full">

@@ -7,6 +7,9 @@ export default function TransactionTable() {
             Date
           </th>
           <th scope="col" className="px-6 py-3">
+            Account
+          </th>
+          <th scope="col" className="px-6 py-3">
             Description
           </th>
           <th scope="col" className="px-6 py-3">
@@ -31,6 +34,7 @@ export default function TransactionTable() {
           >
             1 Jan 2022
           </th>
+          <td className="px-6 py-4">DBS Altitude</td>
           <td className="px-6 py-4">Tori Q - Dinner</td>
           <td className="px-6 py-4">Food</td>
           <td className="px-6 py-4">$10.30</td>

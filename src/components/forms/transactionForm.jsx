@@ -4,35 +4,18 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 export default function TransactionForm({ account }) {
-  let navigate = useNavigate()
+  let navigate = useNavigate();
 
-    const accountName = account.map((accounts, index) => (
-      <option key={index} value={accounts.account}>{accounts.account}</option>
-    ));
-  
   const {
     register,
+    handleSubmit,
     formState: { errors },
   } = useForm();
 
-  
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    const date = event.target.date.value
-    const account = event.target.account.value;
-    const amount = event.target.amount.value
-    const recipient = event.target.recipient.value
-    const transactionDetails = event.target.transaction.value
-    const newTransaction = {
-      date: date,
-      account: account,
-      amount: amount,
-      recipient: recipient,
-      transactionDetails: transactionDetails,
-    }
-
+  const onSubmit = async (event) => {
     const URL = BACKEND + "transactions/new";
-    console.log(URL)
+    const newTransaction = { account, ...event }
+    console.log(newTransaction)
 
     fetch(URL, {
       method: "POST",
@@ -54,11 +37,10 @@ export default function TransactionForm({ account }) {
       });
   };
 
-
   return (
     <div className="mx-auto max-w-6xl bg-gray-200 py-10 px-12 lg:px-24 shadow-xl mb-24">
-      <form onSubmit={handleSubmit}>
-        <div className="my-5">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div>
           <label htmlFor="date">Date of Transaction: </label>
           <input
             type="date"
@@ -72,19 +54,42 @@ export default function TransactionForm({ account }) {
         </div>
         <div className="my-5">
           <label htmlFor="account">Account: </label>
-          <select>{accountName}</select>
+          <select
+            {...register("account")}
+          >
+            {account}
+          </select>
         </div>
         <div className="my-5">
           <label htmlFor="amount">Amount: $</label>
-          <input type="number" name="amount" id="amount" />
+          <input
+            type="number"
+            name="amount"
+            id="amount"
+            {...register("amount", {
+              required: true,
+            })}
+          />
         </div>
         <div className="my-5">
           <label htmlFor="recipient">Recipient (if applicable): </label>
-          <input type="text" name="recipient" id="recipient" />
+          <input
+            type="text"
+            name="recipient"
+            id="recipient"
+            {...register("recipient")}
+          />
         </div>
         <div className="my-5">
           <label htmlFor="transaction">Transaction Details: </label>
-          <input type="text" name="transaction" id="transaction" />
+          <input
+            type="text"
+            name="transaction"
+            id="transaction"
+            {...register("transaction", {
+              required: true,
+            })}
+          />
         </div>
         <Button
           css="md:w-full bg-gray-900 text-white font-bold py-2 px-4 my-5 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"

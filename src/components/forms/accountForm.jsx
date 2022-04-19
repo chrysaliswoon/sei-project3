@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function AccountForm({ profile }) {
   let navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -16,7 +17,7 @@ export default function AccountForm({ profile }) {
   const onSubmit = async (event) => {
     const URL = BACKEND + "new/register";
     const data = { ...profile, ...event }
-    console.log(data);
+    // console.log(data);
 
     fetch(URL, {
       method: "POST",

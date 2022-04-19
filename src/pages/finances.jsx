@@ -4,32 +4,33 @@ import TransactionForm from "../components/forms/transactionForm";
 import SideNavigation from "../components/navigation/navbar";
 
 export default function () {
-  const URL = BACKEND + "transactions";
   const [account, setAccount] = useState([]);
-
-  const username = account.map((accounts, index) => (
-    <p key={index} value={accounts.name}>{accounts.name}</p>
-  ));
-
-  const getData = () => {
+  const [user, setUser] = useState("")
+  
+  const accountType = account.map((accounts, index) => (
+    <option key={index} value={accounts}>{accounts}</option>
+    ))
+    
+    const getData = () => {
+    const URL = BACKEND + "transactions";
     fetch(URL, {
       method: "GET",
-      mode: "cors",
-      cache: "no-cache",
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
     })
-      .then((response) => response.json())
-      .then((data) => setAccount(data));
+      .then((res) => res.json())
+      .then((data) => {
+        setAccount(data.accountName)
+        setUser(data.name)
+      })
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
     getData();
   }, []);
-
-  console.log(account);
 
   return (
     <div className="flex">
@@ -39,13 +40,13 @@ export default function () {
       <div className="p-4 m-8 flex-auto w-64">
         <h1 className="uppercase font-bold">New Transaction</h1>
         <p>
-          Hi {username}, please select an account which the transaction was made
+          Welcome back {user}, please select an account which the transaction was made and input the details. 
         </p>
         <div className="py-8">
-          <TransactionForm account={account} />;
+          <TransactionForm account={accountType} />;
         </div>
       </div>
     </div>
-  );
+  )
 }
 
