@@ -11,13 +11,13 @@ describe("loginPage", () => {
     cy.visit(URL);
     cy.get("#email").type("mary@gmail.com");
     cy.get("#password").type("123");
-    cy.get("#login").click();
+    cy.get("#signIn").click();
   });
-  it("failLogin", () => {
-    const randomEmail = faker.internet.email();
-    cy.visit(URL);
-    cy.get("#email").type(randomEmail);
-    cy.get("#password").type("123");
-    cy.get("#login").click();
-  });
+  // it("failLogin", () => {
+  //   const randomEmail = faker.internet.email();
+  //   cy.visit(URL);
+  //   cy.get("#email").type(randomEmail);
+  //   cy.get("#password").type("123");
+  //   cy.get("#signIn").click();
+  // });
 });

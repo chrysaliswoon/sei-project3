@@ -95,8 +95,8 @@ export default function LoginForm({setLoggedIn}) {
           <Button
             css="w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50"
             type="submit"
-            name="login"
-            id="login"
+            name="signIn"
+            id="signIn"
             description="Sign In"
           />
           <nav>
