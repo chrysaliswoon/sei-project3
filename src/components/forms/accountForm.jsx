@@ -20,22 +20,22 @@ export default function AccountForm({ profile }) {
 
     fetch(URL, {
       method: "POST",
-      mode: 'cors',
-      cache: 'no-cache',
-      credentials: "same-origin",
+      mode: "cors",
+      cache: "no-cache",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     })
-    .then(onSubmit => onSubmit.json())
-      .then(data => {
-        console.log('Success', data) 
-      navigate("/success")
-    })
+      .then((onSubmit) => onSubmit.json())
+      .then((data) => {
+        console.log("Success", data);
+        navigate("/success");
+      })
       .catch((error) => {
-        console.log('Error:', error)
-    })
+        console.log("Error:", error);
+      });
   };
 
   return (

@@ -38,7 +38,7 @@ export default function TransactionForm({ account }) {
       method: "POST",
       mode: "cors",
       cache: "no-cache",
-      credentials: "same-origin",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
@@ -47,7 +47,7 @@ export default function TransactionForm({ account }) {
       .then((res) => res.json())
       .then((data) => {
         console.log("Success", data);
-        navigate("/transactions")
+        navigate("/transactions");
       })
       .catch((error) => {
         console.log("Error:", error);
