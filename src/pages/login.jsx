@@ -1,5 +1,4 @@
 import LoginForm from '../components/forms/loginForm'
-
 export default function LoginPage({setLoggedIn}) {
   
   return (

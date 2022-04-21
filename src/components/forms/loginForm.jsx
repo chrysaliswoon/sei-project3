@@ -1,17 +1,20 @@
 import React from "react";
 import loginImg from "../../assets/login.jpg";
 import logo from "../../assets/logo.png";
-import { UserCircleIcon, LockClosedIcon } from "@heroicons/react/solid";
-import { Link } from "react-router-dom";
 import Button from "../buttons/button";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+import { UserCircleIcon, LockClosedIcon } from "@heroicons/react/solid";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 import { BACKEND } from "../../utils";
 
 export default function LoginForm({ setLoggedIn }) {
-  let navigate = useNavigate();
-
+  const mesageNotFound = "user not found";
+  const messageWrongPassword = "Wrong Password";
+  const navigate = useNavigate();
   const { register } = useForm();
+  const LoginAlert = withReactContent(Swal);
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -34,8 +37,19 @@ export default function LoginForm({ setLoggedIn }) {
       .then((res) => res.json())
       .then((data) => {
         // console.log("Success", data);
-        console.log(data.msg);
-        if (data.msg == "user not found" || data.msg == "Wrong Password") {
+        // console.log(data.msg);
+        if (data.msg == mesageNotFound) {
+          LoginAlert.fire({
+            title: mesageNotFound,
+            footer: "Please register for an account",
+          });
+          setLoggedIn(false);
+          navigate("/");
+        } else if (data.msg == messageWrongPassword) {
+          LoginAlert.fire({
+            title: messageWrongPassword,
+            footer: "Please check your password",
+          });
           setLoggedIn(false);
           navigate("/");
         } else {
