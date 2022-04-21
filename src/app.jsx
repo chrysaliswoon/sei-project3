@@ -40,7 +40,7 @@ export default function App() {
         setTransaction(data.transaction);
         setAmount(data.amount);
         setDate(data.date);
-        console.log(data)
+        // console.log(data)
       })
       .catch((err) => console.log(err));
   };

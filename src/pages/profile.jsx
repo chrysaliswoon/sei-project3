@@ -1,21 +1,18 @@
 import SideNavigation from "../components/navigation/navbar";
-import ProfileInfo from "../components/features/profile/profileInfo"
+import ProfileInfo from "../components/features/profile/profileInfo";
 import { useState } from "react";
 
-export default function ProfilePage({user, email}) {
+export default function ProfilePage({ user, email }) {
+  const [profilePic, setprofilePic] = useState(
+    "http://source.unsplash.com/500x500/?girl"
+  );
 
-    const [profilePic, setprofilePic] = useState(
-      "http://source.unsplash.com/500x500/?girl"
-    );
+  const addProfilePicture = (pictures) => {
+    pictures.preventDefault();
+    console.log("Clicked Submit");
+    // setprofilePic(pictures.target.value)
+  };
 
-    const addProfilePicture = (pictures) => {
-      let picture = [...profilePic, pictures];
-      setprofilePic(picture);
-    };
-
-  console.log(profilePic);
-
-  
   return (
     <div className="flex bg-gray-100 ">
       <div className="flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto border-r ">
@@ -24,7 +21,12 @@ export default function ProfilePage({user, email}) {
       <div className="p-4 m-8 flex-auto w-64">
         <h1 className="uppercase font-bold">Profile Page</h1>
         <div>
-          <ProfileInfo profilePic={profilePic} user={user} email={email}/>
+          <ProfileInfo
+            handleClick={addProfilePicture}
+            profilePic={profilePic}
+            user={user}
+            email={email}
+          />
         </div>
       </div>
     </div>

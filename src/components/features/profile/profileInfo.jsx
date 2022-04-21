@@ -1,7 +1,7 @@
 import Button from "../../buttons/button";
 import React from "react";
 
-export default function Profile({ profilePic, user, email }) {
+export default function Profile({ handleClick, profilePic, user, email }) {
 
   return (
     <div className="h-screen w-full">
@@ -9,7 +9,7 @@ export default function Profile({ profilePic, user, email }) {
         <p>This contains your profile information.</p>
       </div>
       <div className="max-w-[400px] w-full mx-auto p-8 px-8 relative justify-center items-center ">
-        <form>
+        <form onSubmit={handleClick}> 
           <div className="m-1 mr-2 w-40 h-40 rounded-full">
             <img src={profilePic} className="rounded-full" />
           </div>
