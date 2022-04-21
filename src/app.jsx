@@ -19,11 +19,14 @@ export default function App() {
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [account, setAccount] = useState([]);
-  const [transaction, setTransaction] = useState("test description");
-  const [date, setDate] = useState("test date");
-  const [amount, setAmount] = useState("test amount");
+  const [transaction, setTransaction] = useState("");
+  const [date, setDate] = useState("");
+  const [amount, setAmount] = useState("");
+  const [table, setTable] = useState([])
 
-  const getData = () => {
+  // const delete_id = useRef(null);
+
+  const getTransactionData = () => {
     const URL = BACKEND + "transactions";
     fetch(URL, {
       method: "GET",
@@ -34,19 +37,36 @@ export default function App() {
     })
       .then((res) => res.json())
       .then((data) => {
-        setUser(data.name);
-        setEmail(data.email);
-        setAccount(data.accountName);
-        setTransaction(data.transaction);
-        setAmount(data.amount);
-        setDate(data.date);
-        // console.log(data)
+        setTable(data)
       })
       .catch((err) => console.log(err));
   };
 
+  // const deleteDataById = () => {
+  //    const id = "test"
+  //     const URL = BACKEND + `transactions/${id}`;
+  //     fetch(URL, {
+  //       method: "DELETE",
+  //       credentials: "include",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     })
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         setUser(data.name);
+  //         setEmail(data.email);
+  //         setAccount(data.accountName);
+  //         setTransaction(data.transaction);
+  //         setAmount(data.amount);
+  //         setDate(data.date);
+  //       })
+  //       .catch((err) => console.log(err));
+  //   };
+
   useEffect(() => {
-    getData();
+    getTransactionData();
+    // deleteDataById();
   }, []);
 
   return (
@@ -70,6 +90,7 @@ export default function App() {
               account={account}
               transaction={transaction}
               amount={amount}
+              table={table}
             />
           }
         />

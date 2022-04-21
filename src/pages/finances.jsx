@@ -12,7 +12,7 @@ export default function () {
     ))
     
     const getData = () => {
-    const URL = BACKEND + "transactions";
+    const URL = BACKEND + "user";
     fetch(URL, {
       method: "GET",
       credentials: "include",

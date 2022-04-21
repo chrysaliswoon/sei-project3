@@ -2,18 +2,45 @@ import SideNavigation from "../components/navigation/navbar";
 import TransactionTable from "../components/features/transactions/transactionTable";
 import FilterNav from "../components/features/transactions/filter";
 import Button from "../components/buttons/button";
-import { useState } from "react";
-import data from "../testData/table";
+import { BACKEND } from "../utils";
+import React, { useEffect, useState } from "react";
+
 
 export default function Transaction({
   user,
-  account,
-  transaction,
-  date,
-  amount,
+  table,
 }) {
   
-  const [table, setTable] = useState(data);
+  const [deleteId, setDeleteId] = useState("")
+
+  // const handleSubmit = id => event => {
+  const handleSubmit = (id, event) => {
+    event.preventDefault();
+    // console.log(id);
+    setDeleteId(id)
+  };
+
+  const deleteDataById = () => {
+      const URL = BACKEND + `transactions/${deleteId}`;
+      console.log(URL)
+      fetch(URL, {
+        method: "DELETE",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data)
+          deleteDataById();
+        })
+        .catch((err) => console.log(err));
+    };
+
+    // useEffect(() => {
+    //   deleteDataById();
+    // }, []);
 
   const transactionSummary = table.map((data, index) => (
     <tr
@@ -26,27 +53,31 @@ export default function Transaction({
       >
         {data.date}
       </th>
-      <td className="px-6 py-4">{data.account}</td>
-      <td className="px-6 py-4">{data.transaction}</td>
-      <td className="px-6 py-4">{data.category}</td>
+      <td className="px-6 py-4">{data.accountName}</td>
+      <td className="px-6 py-4">{data.tDetails}</td>
+      <td className="px-6 py-4">{data.tCategory}</td>
       <td className="px-6 py-4">{data.sender}</td>
-      <td className="px-6 py-4">{data.recipient}</td>
+      <td className="px-6 py-4">{data.recipeintName}</td>
       <td className="px-6 py-4">$ {data.amount}</td>
       <td className="px-6 py-4 text-right">
-        <a
-          href="#"
+        <button
+          // id={data._id}
           className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+          // onClick={handleSubmit(data._id)}
+          onClick={(event) => handleSubmit(data._id, event)} // Calling handlesubmit with two parameters (id, event)
         >
-          Edit
-        </a>
+          Update
+        </button>
       </td>
       <td className="px-6 py-4 text-right">
-        <a
-          href="#"
+        <button
+          // id={data._id}
           className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+          // onClick={handleSubmit(data._id)}
+          onClick={(event) => handleSubmit(data._id, event)} // Calling handlesubmit with two parameters (id, event)
         >
           Delete
-        </a>
+        </button>
       </td>
     </tr>
   ));
