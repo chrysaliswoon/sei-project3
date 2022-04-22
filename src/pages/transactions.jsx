@@ -5,24 +5,44 @@ import Button from "../components/buttons/button";
 import { BACKEND } from "../utils";
 import React, { useEffect, useState } from "react";
 
-export default function Transaction({ user, table }) {
+export default function Transaction() {
+  const [table, setTable] = useState([]);
+
   let date = "2022-04-20T00:00:00.000Z";
   let json = JSON.stringify(date);
   let dateStr = JSON.parse(json);
   let newDate = new Date(dateStr);
   // console.log(newDate)
-
-  const URL = BACKEND;
-
   // const handleSubmit = id => event => {
+
+  const getTransactionData = () => {
+    const URL = BACKEND + "transactions";
+    fetch(URL, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setTable(data);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    getTransactionData();
+  }, []);
+
   const handleSubmit = (id, event) => {
     event.preventDefault();
-    fetch(URL + id, {
+    fetch(BACKEND + id, {
       method: "DELETE",
     }).then((response) => {
       console.log(response);
-      table.filter((transaction) => transaction._id !== id)
-      console.log(table)
+      setTable(table.filter((transaction) => transaction._id !== id));
+      console.log(table);
     });
   };
 
@@ -100,7 +120,7 @@ export default function Transaction({ user, table }) {
         <SideNavigation />
       </div>
       <div className="p-4 m-8 flex-auto w-64">
-        <h1 className="uppercase font-bold">{user} Transactions</h1>
+        <h1 className="uppercase font-bold">Transactions</h1>
         <p>Have an overview of your financial transactions</p>
         <div className="py-5">
           <FilterNav button={button} button2={button2} button3={button3} />

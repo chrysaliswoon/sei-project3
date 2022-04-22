@@ -23,27 +23,27 @@ export default function App() {
   const [transaction, setTransaction] = useState("");
   const [date, setDate] = useState("");
   const [amount, setAmount] = useState("");
-  const [table, setTable] = useState([])
+  // const [table, setTable] = useState([])
 
-  const getTransactionData = () => {
-    const URL = BACKEND + "transactions";
-    fetch(URL, {
-      method: "GET",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setTable(data)
-      })
-      .catch((err) => console.log(err));
-  };
+  // const getTransactionData = () => {
+  //   const URL = BACKEND + "transactions";
+  //   fetch(URL, {
+  //     method: "GET",
+  //     credentials: "include",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setTable(data)
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
 
-  useEffect(() => {
-    getTransactionData();
-  }, []);
+  // useEffect(() => {
+  //   getTransactionData();
+  // }, []);
 
   return (
     <BrowserRouter>
@@ -54,29 +54,23 @@ export default function App() {
             path="dashboard"
             element={loggedIn ? <Dashboard /> : <LoginPage />}
           /> */}
-        <Route path="dashboard" element={<Dashboard user={user} />} />
+        <Route path="dashboard" element={<Dashboard />} />
         <Route path="success" element={<RegistrationSuccess />} />
         <Route path="form" element={<Finances />} />
         <Route
           path="transactions"
           element={
             <Transaction
-              user={user}
-              date={date}
-              account={account}
-              transaction={transaction}
-              amount={amount}
-              table={table}
             />
           }
         />
         <Route
           path="profile"
-          element={<ProfilePage user={user} email={email} />}
+          element={<ProfilePage />}
         />
         <Route
           path="accounts"
-          element={<AccountPage user={user} account={account} />}
+          element={<AccountPage />}
         />
         <Route path="goals" element={<GoalsPage />} />
         <Route path="*" element={<Error />} />
