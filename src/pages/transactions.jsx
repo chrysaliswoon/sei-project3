@@ -5,42 +5,26 @@ import Button from "../components/buttons/button";
 import { BACKEND } from "../utils";
 import React, { useEffect, useState } from "react";
 
+export default function Transaction({ user, table }) {
+  let date = "2022-04-20T00:00:00.000Z";
+  let json = JSON.stringify(date);
+  let dateStr = JSON.parse(json);
+  let newDate = new Date(dateStr);
+  // console.log(newDate)
 
-export default function Transaction({
-  user,
-  table,
-}) {
-  
-  const [deleteId, setDeleteId] = useState("")
+  const URL = BACKEND;
 
   // const handleSubmit = id => event => {
   const handleSubmit = (id, event) => {
     event.preventDefault();
-    // console.log(id);
-    setDeleteId(id)
+    fetch(URL + id, {
+      method: "DELETE",
+    }).then((response) => {
+      console.log(response);
+      table.filter((transaction) => transaction._id !== id)
+      console.log(table)
+    });
   };
-
-  const deleteDataById = () => {
-      const URL = BACKEND + `transactions/${deleteId}`;
-      console.log(URL)
-      fetch(URL, {
-        method: "DELETE",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data)
-          deleteDataById();
-        })
-        .catch((err) => console.log(err));
-    };
-
-    // useEffect(() => {
-    //   deleteDataById();
-    // }, []);
 
   const transactionSummary = table.map((data, index) => (
     <tr

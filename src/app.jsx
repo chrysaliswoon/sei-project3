@@ -14,6 +14,7 @@ import ProfilePage from "./pages/profile";
 import AccountPage from "./pages/accounts";
 import GoalsPage from "./pages/goals";
 
+
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState("");
@@ -23,8 +24,6 @@ export default function App() {
   const [date, setDate] = useState("");
   const [amount, setAmount] = useState("");
   const [table, setTable] = useState([])
-
-  // const delete_id = useRef(null);
 
   const getTransactionData = () => {
     const URL = BACKEND + "transactions";
@@ -42,31 +41,8 @@ export default function App() {
       .catch((err) => console.log(err));
   };
 
-  // const deleteDataById = () => {
-  //    const id = "test"
-  //     const URL = BACKEND + `transactions/${id}`;
-  //     fetch(URL, {
-  //       method: "DELETE",
-  //       credentials: "include",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setUser(data.name);
-  //         setEmail(data.email);
-  //         setAccount(data.accountName);
-  //         setTransaction(data.transaction);
-  //         setAmount(data.amount);
-  //         setDate(data.date);
-  //       })
-  //       .catch((err) => console.log(err));
-  //   };
-
   useEffect(() => {
     getTransactionData();
-    // deleteDataById();
   }, []);
 
   return (
