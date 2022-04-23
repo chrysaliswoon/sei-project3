@@ -1,11 +1,19 @@
-import {BACKEND} from "../../../utils"
+import { BACKEND } from "../../../utils";
 import React, { useEffect, useState } from "react";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
+import { useNavigate } from "react-router-dom";
+import { atom } from 'jotai'
+import { useAtom } from 'jotai'
+
+import UpdateForm from "../../forms/updateForm";
+
+// export const transactionAtom = atom(0)
 
 export default function TransactionTable() {
+  // const [transactionAtom, settransactionAtom] = useAtom(transactionAtom)
+
+  const navigate = useNavigate();
   const [table, setTable] = useState([]);
-  const FormUpdate = withReactContent(Swal)
+  // const FormUpdate = withReactContent(Swal);
 
   let date = "2022-04-20T00:00:00.000Z";
   let json = JSON.stringify(date);
@@ -43,7 +51,6 @@ export default function TransactionTable() {
         "Content-Type": "application/json",
       },
       credentials: "include",
-
     }).then((response) => {
       console.log(response);
       setTable(table.filter((transaction) => transaction._id !== id));
@@ -51,53 +58,12 @@ export default function TransactionTable() {
     });
   };
 
-  const handleUpdate = (id, date, amount, tDetails, event) => {
-    event.preventDefault();
-    FormUpdate.fire({
-      title: `Update ${id}`,
-      html: `
-      <input type="date" id="date" class="swal2-input" placeholder="Date" value="${date}">
-      <input type="number" id="amount" class="swal2-input" placeholder="Amount" value="${amount}">
-      <input type="text" id="recipient" class="swal2-input" placeholder="Recipient (if applicable)" value="">
-      <input type="text" id="transaction" class="swal2-input" placeholder="Transaction Details" value=${tDetails}>
-      `,
-      confirmButtonText: 'Update',
-      focusConfirm: false,
-      // preConfirm: () => {
-      //   const login = Swal.getPopup().querySelector('#login').value
-      //   const password = Swal.getPopup().querySelector('#password').value
-      //   if (!login || !password) {
-      //     Swal.showValidationMessage(`Please enter login and password`)
-      //   }
-      //   return { login: login, password: password }
-      // }
-    })
-    // .then((result) => {
-    //   console.log(result)
-    //   FormUpdate.fire(`
-    //   Date: ${result.value.date}
-    //   Amount: ${result.value.amount}
-    //   Recipient: ${result.value.recipient}
-    //   Transaction: ${result.value.transaction}
-    //   `.trim())
-    //   console.log(result)
-    // })
-    fetch(BACKEND + "transactions/" + id, {
-      method: "PUT",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(),
-    })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log("Success:", data)
-    })
-    .catch((error) => {
-      console.log("Error:", error)
-    })
-  }
+  const handleUpdate = (id, date, amount, sender, recipient, details, event) => {
+    // console.log(date)
+    // settransactionAtom({date, amount, sender, recipient, details, event})
+    navigate(`/update/${id}`);
+  };
+
   const transactionSummary = table.map((data, index) => (
     <tr
       className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
@@ -120,7 +86,7 @@ export default function TransactionTable() {
           // id={data._id}
           className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
           // onClick={handleSubmit(data._id)}
-          onClick={(event) => handleUpdate(data._id, data.date, data.amount, data.tDetails, event)} // Calling handlesubmit with two parameters (id, event)
+          onClick={(event) => handleUpdate(data._id, data.date, data.amount, data.sender, data.recipientName, data.tDetails, event)} // Calling handlesubmit with two parameters (id, event)
         >
           Update
         </button>

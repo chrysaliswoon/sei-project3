@@ -13,6 +13,7 @@ import Finances from "./pages/finances";
 import ProfilePage from "./pages/profile";
 import AccountPage from "./pages/accounts";
 import GoalsPage from "./pages/goals";
+import Update from "./pages/update";
 
 
 export default function App() {
@@ -23,27 +24,6 @@ export default function App() {
   const [transaction, setTransaction] = useState("");
   const [date, setDate] = useState("");
   const [amount, setAmount] = useState("");
-  // const [table, setTable] = useState([])
-
-  // const getTransactionData = () => {
-  //   const URL = BACKEND + "transactions";
-  //   fetch(URL, {
-  //     method: "GET",
-  //     credentials: "include",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setTable(data)
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
-
-  // useEffect(() => {
-  //   getTransactionData();
-  // }, []);
 
   return (
     <BrowserRouter>
@@ -57,6 +37,8 @@ export default function App() {
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="success" element={<RegistrationSuccess />} />
         <Route path="form" element={<Finances />} />
+        <Route path="update/:id" element={<Update />} />
+
         <Route
           path="transactions"
           element={

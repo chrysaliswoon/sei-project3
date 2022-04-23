@@ -1,10 +1,16 @@
 import Button from "../buttons/button";
+import React, { useEffect, useState } from "react";
 import { BACKEND } from "../../utils";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useAtom } from "jotai";
+import { transactionAtom } from "../features/transactions/transactionTable";
 
+export default function UpdateForm({ id }) {
+  // const [transactionAtom, settransactionAtom] = useAtom(transactionAtom)
+  // console.log(transactionAtom)
+  const [form, setForm] = useState([]);
 
-export default function TransactionForm({ account }) {
   let navigate = useNavigate();
 
   const {
@@ -13,20 +19,40 @@ export default function TransactionForm({ account }) {
     formState: { errors },
   } = useForm();
 
+  const getCurrentData = () => {
+    const URL = BACKEND + "transactions";
+    fetch(URL, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setForm(data);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    getCurrentData();
+  }, []);
+
   const onSubmit = async (event) => {
-    const URL = BACKEND + "transactions/new";
-    const newTransaction = { account, ...event };
-    console.log(newTransaction);
+    const URL = BACKEND + "transactions";
+    // const updateTransaction = { account, ...event };
+    // console.log(updateTransaction);
 
     fetch(URL, {
-      method: "POST",
+      method: "PUT",
       mode: "cors",
       cache: "no-cache",
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newTransaction),
+      body: JSON.stringify(),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -47,15 +73,12 @@ export default function TransactionForm({ account }) {
             type="date"
             name="date"
             id="date"
-            {...register("date", {
-              required: true,
-            })}
+            value={date}
+            // {...register("date", {
+            //   required: true,
+            // })}
           />
           {errors?.date?.type === "required" && <p>This field is required</p>}
-        </div>
-        <div className="my-5">
-          <label htmlFor="account">Account: </label>
-          <select {...register("account")}>{account}</select>
         </div>
         <div className="my-5">
           <label htmlFor="amount">Amount: $</label>
@@ -64,9 +87,10 @@ export default function TransactionForm({ account }) {
             step="any"
             name="amount"
             id="amount"
-            {...register("amount", {
-              required: true,
-            })}
+            // value={transactionAtom.amount}
+            // {...register("amount", {
+            //   required: true,
+            // })}
           />
         </div>
         <div className="my-5">
@@ -75,7 +99,8 @@ export default function TransactionForm({ account }) {
             type="text"
             name="sender"
             id="sender"
-            {...register("sender")}
+            // value={transactionAtom.sender}
+            // {...register("sender")}
           />
         </div>
         <div className="my-5">
@@ -84,7 +109,8 @@ export default function TransactionForm({ account }) {
             type="text"
             name="recipient"
             id="recipient"
-            {...register("recipient")}
+            // value={transactionAtom.recipient}
+            // {...register("recipient")}
           />
         </div>
         <div className="my-5">
@@ -93,30 +119,11 @@ export default function TransactionForm({ account }) {
             type="text"
             name="transaction"
             id="transaction"
-            {...register("transaction", {
-              required: true,
-            })}
+            // value={transactionAtom.transaction}
+            // {...register("transaction", {
+            //   required: true,
+            // })}
           />
-        </div>
-        <div className="my-5">
-          <p>Transaction Category</p>
-          <input
-            type="radio"
-            id="income"
-            name="category"
-            value="Income"
-            {...register("category")}
-          />
-          <label htmlFor="Income"> Income</label>
-          {"  "}
-          <input
-            type="radio"
-            id="expense"
-            name="category"
-            value="Expense"
-            {...register("category")}
-          />
-          <label htmlFor="Expense"> Expense</label>
         </div>
         <Button
           css="md:w-full bg-gray-900 text-white font-bold py-2 px-4 my-5 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
