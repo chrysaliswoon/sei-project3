@@ -13,13 +13,7 @@ export default function TransactionTable() {
 
   const navigate = useNavigate();
   const [table, setTable] = useState([]);
-  // const FormUpdate = withReactContent(Swal);
 
-  let date = "2022-04-20T00:00:00.000Z";
-  let json = JSON.stringify(date);
-  let dateStr = JSON.parse(json);
-  let newDate = new Date(dateStr);
-  // console.log(newDate)
   // const handleSubmit = id => event => {
 
   const getTransactionData = () => {
@@ -55,7 +49,8 @@ export default function TransactionTable() {
       console.log(response);
       setTable(table.filter((transaction) => transaction._id !== id));
       console.log(table);
-    });
+    })
+      .catch((err) => console.log(err));
   };
 
   const handleUpdate = (id, event) => {

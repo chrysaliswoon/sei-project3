@@ -1,8 +1,25 @@
+import { BACKEND } from "../../utils";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import Button from "../buttons/button";
 
 export default function SideNavigation() {
+
+  const handleLogOut = (event) => {
+    console.log("Logged out")
+    event.preventDefault();
+    fetch(BACKEND + "dashboard/logout", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+    }).then((response) => {
+      console.log(response);
+    })
+    .catch((err) => console.log(err));
+  };
+
   return (
     <div className="max-w-sm mx-auto rounded-xl overflow-hidden sm:max-w-sm">
       <div className="sm:flex">
@@ -142,6 +159,7 @@ export default function SideNavigation() {
                 <Link
                   to="/"
                   className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                  onClick={handleLogOut}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
