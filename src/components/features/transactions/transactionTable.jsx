@@ -58,7 +58,7 @@ export default function TransactionTable() {
     });
   };
 
-  const handleUpdate = (id, date, amount, sender, recipient, details, event) => {
+  const handleUpdate = (id, event) => {
     // console.log(date)
     // settransactionAtom({date, amount, sender, recipient, details, event})
     navigate(`/update/${id}`);

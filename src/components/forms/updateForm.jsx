@@ -1,4 +1,5 @@
 import Button from "../buttons/button";
+import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { BACKEND } from "../../utils";
 import { useForm } from "react-hook-form";
@@ -6,9 +7,10 @@ import { useNavigate } from "react-router-dom";
 import { useAtom } from "jotai";
 import { transactionAtom } from "../features/transactions/transactionTable";
 
-export default function UpdateForm({ id }) {
+export default function UpdateForm() {
   // const [transactionAtom, settransactionAtom] = useAtom(transactionAtom)
   // console.log(transactionAtom)
+  let { id } = useParams();
   const [form, setForm] = useState([]);
 
   let navigate = useNavigate();
@@ -20,7 +22,7 @@ export default function UpdateForm({ id }) {
   } = useForm();
 
   const getCurrentData = () => {
-    const URL = BACKEND + "transactions";
+    const URL = BACKEND + `transactions/${id}`;
     fetch(URL, {
       method: "GET",
       credentials: "include",
@@ -73,7 +75,7 @@ export default function UpdateForm({ id }) {
             type="date"
             name="date"
             id="date"
-            value={date}
+            value={form.date}
             // {...register("date", {
             //   required: true,
             // })}
