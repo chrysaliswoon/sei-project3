@@ -1,8 +1,11 @@
 import {BACKEND} from "../../../utils"
 import React, { useEffect, useState } from "react";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 export default function TransactionTable() {
   const [table, setTable] = useState([]);
+  const FormUpdate = withReactContent(Swal)
 
   let date = "2022-04-20T00:00:00.000Z";
   let json = JSON.stringify(date);
@@ -34,8 +37,13 @@ export default function TransactionTable() {
 
   const handleDelete = (id, event) => {
     event.preventDefault();
-    fetch(BACKEND + id, {
+    fetch(BACKEND + "transactions/" + id, {
       method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+
     }).then((response) => {
       console.log(response);
       setTable(table.filter((transaction) => transaction._id !== id));
@@ -43,6 +51,17 @@ export default function TransactionTable() {
     });
   };
 
+  const handleUpdate = (id, event) => {
+    event.preventDefault();
+    fetch(BACKEND + "transactions/" + id, {
+      method: "PUT",
+      body: JSON.stringify(),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+    })
+  }
   const transactionSummary = table.map((data, index) => (
     <tr
       className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
