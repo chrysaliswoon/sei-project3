@@ -12,6 +12,7 @@ export default function UpdateForm() {
   // console.log(transactionAtom)
   let { id } = useParams();
   const [form, setForm] = useState([]);
+//   console.log(form)
 
   let navigate = useNavigate();
 
@@ -20,6 +21,14 @@ export default function UpdateForm() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const handleChange = (event) => {
+    // const changeValue = event.target.value
+    // console.log(event.target.value)
+    event.preventDefault();
+    setForm({...form, event})
+
+  }
 
   const getCurrentData = () => {
     const URL = BACKEND + `transactions/${id}`;
@@ -42,19 +51,17 @@ export default function UpdateForm() {
   }, []);
 
   const onSubmit = async (event) => {
-    const URL = BACKEND + "transactions";
-    // const updateTransaction = { account, ...event };
-    // console.log(updateTransaction);
+    const URL = BACKEND + `transactions/${id}`;
+    const updateTransaction = { form, ...event };
+    console.log(updateTransaction);
 
     fetch(URL, {
       method: "PUT",
-      mode: "cors",
-      cache: "no-cache",
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(),
+      body: JSON.stringify(updateTransaction),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -75,12 +82,9 @@ export default function UpdateForm() {
             type="date"
             name="date"
             id="date"
-            value={form.date}
-            // {...register("date", {
-            //   required: true,
-            // })}
+            defaultValue={form.date}
+            {...register("date")}
           />
-          {errors?.date?.type === "required" && <p>This field is required</p>}
         </div>
         <div className="my-5">
           <label htmlFor="amount">Amount: $</label>
@@ -89,10 +93,8 @@ export default function UpdateForm() {
             step="any"
             name="amount"
             id="amount"
-            // value={transactionAtom.amount}
-            // {...register("amount", {
-            //   required: true,
-            // })}
+            defaultValue={form.amount}
+            {...register("amount")}
           />
         </div>
         <div className="my-5">
@@ -101,8 +103,8 @@ export default function UpdateForm() {
             type="text"
             name="sender"
             id="sender"
-            // value={transactionAtom.sender}
-            // {...register("sender")}
+            defaultValue={form.sender}
+            {...register("sender")}
           />
         </div>
         <div className="my-5">
@@ -111,8 +113,8 @@ export default function UpdateForm() {
             type="text"
             name="recipient"
             id="recipient"
-            // value={transactionAtom.recipient}
-            // {...register("recipient")}
+            defaultValue={form.recipientName}
+            {...register("recipient")}
           />
         </div>
         <div className="my-5">
@@ -121,18 +123,16 @@ export default function UpdateForm() {
             type="text"
             name="transaction"
             id="transaction"
-            // value={transactionAtom.transaction}
-            // {...register("transaction", {
-            //   required: true,
-            // })}
+            defaultValue={form.tDetails}
+            {...register("transaction")}
           />
         </div>
         <Button
           css="md:w-full bg-gray-900 text-white font-bold py-2 px-4 my-5 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
           type="submit"
-          name="submit"
-          id="submit"
-          description="Submit"
+          name="update"
+          id="update"
+          description="Update"
         />
       </form>
     </div>
