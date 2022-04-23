@@ -9,7 +9,7 @@ export default function ProfilePage({ user, email }) {
 
   const addProfilePicture = (pictures) => {
     pictures.preventDefault();
-    console.log("Clicked Submit");
+    // console.log("Clicked Submit");
     // setprofilePic(pictures.target.value)
   };
 

@@ -16,7 +16,7 @@ export default function TransactionForm({ account }) {
   const onSubmit = async (event) => {
     const URL = BACKEND + "transactions/new";
     const newTransaction = { account, ...event };
-    console.log(newTransaction);
+    // console.log(newTransaction);
 
     fetch(URL, {
       method: "POST",
@@ -30,11 +30,11 @@ export default function TransactionForm({ account }) {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("Success", data);
+        // console.log("Success", data);
         navigate("/transactions");
       })
       .catch((error) => {
-        console.log("Error:", error);
+        // console.log("Error:", error);
       });
   };
 

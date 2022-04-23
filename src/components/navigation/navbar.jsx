@@ -1,12 +1,14 @@
 import { BACKEND } from "../../utils";
 import logo from "../../assets/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import Button from "../buttons/button";
 
 export default function SideNavigation() {
+  let navigate = useNavigate();
+
 
   const handleLogOut = (event) => {
-    console.log("Logged out")
+    // console.log("Logged out")
     event.preventDefault();
     fetch(BACKEND + "dashboard/logout", {
       method: "DELETE",
@@ -15,9 +17,11 @@ export default function SideNavigation() {
       },
       credentials: "include",
     }).then((response) => {
-      console.log(response);
+      // console.log(response);
+      navigate("/")
     })
-    .catch((err) => console.log(err));
+    .catch((err) => 
+    console.log(err));
   };
 
   return (
@@ -156,7 +160,7 @@ export default function SideNavigation() {
                 </Link>
               </li> */}
               <li>
-                <Link
+                <a href
                   to="/"
                   className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                   onClick={handleLogOut}
@@ -178,7 +182,7 @@ export default function SideNavigation() {
                   <span className="flex-1 ml-3 whitespace-nowrap">
                     Sign Out
                   </span>
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

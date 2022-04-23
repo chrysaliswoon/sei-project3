@@ -5,8 +5,8 @@ import data from "../../../testData/cards"
 export default function Accounts() {
   const [balance, setBalance] = useState(data[0])
   const handleClick = (dataID) => setBalance(dataID)
-  console.log(balance)
-  console.log(handleClick)
+  // console.log(balance)
+  // console.log(handleClick)
   
   return (
     <div className="grid grid-cols-2 gap-4 py-8">

@@ -31,11 +31,11 @@ export default function AccountForm({ profile }) {
     })
       .then((onSubmit) => onSubmit.json())
       .then((data) => {
-        console.log("Success", data);
+        // console.log("Success", data);
         navigate("/success");
       })
       .catch((error) => {
-        console.log("Error:", error);
+        // console.log("Error:", error);
       });
   };
 

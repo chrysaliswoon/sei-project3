@@ -1,5 +1,4 @@
-import { BACKEND } from "../src/utils";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //? Import Pages

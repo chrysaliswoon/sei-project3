@@ -53,7 +53,7 @@ export default function UpdateForm() {
   const onSubmit = async (event) => {
     const URL = BACKEND + `transactions/${id}`;
     const updateTransaction = { form, ...event };
-    console.log(updateTransaction);
+    // console.log(updateTransaction);
 
     fetch(URL, {
       method: "PUT",
@@ -65,11 +65,11 @@ export default function UpdateForm() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("Success", data);
+        // console.log("Success", data);
         navigate("/transactions");
       })
       .catch((error) => {
-        console.log("Error:", error);
+        // console.log("Error:", error);
       });
   };
 
