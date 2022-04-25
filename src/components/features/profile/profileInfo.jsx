@@ -64,7 +64,7 @@ export default function Profile({profilePic}) {
             type="submit"
             name="profile"
             id="profile"
-            description="Submit"
+            description="Update"
             value={profilePic}
           />
           </div>
