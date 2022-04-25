@@ -1,7 +1,32 @@
 import Button from "../../buttons/button";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { BACKEND } from "../../../utils";
 
-export default function Profile({ handleClick, profilePic, user, email }) {
+export default function Profile({profilePic}) {
+
+  const [user, setUser] = useState("")
+  const [email, setEmail] = useState("")
+    
+    const getProfile = () => {
+    const URL = BACKEND + "user";
+    fetch(URL, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setUser(data.name)
+        setEmail(data.email)
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    getProfile();
+  }, []);
 
   return (
     <div className="h-screen w-full">
@@ -9,7 +34,7 @@ export default function Profile({ handleClick, profilePic, user, email }) {
         <p>This contains your profile information.</p>
       </div>
       <div className="max-w-[400px] w-full mx-auto p-8 px-8 relative justify-center items-center ">
-        <form onSubmit={handleClick}> 
+        <form> 
           <div className="m-1 mr-2 w-40 h-40 rounded-full">
             <img src={profilePic} className="rounded-full" />
           </div>

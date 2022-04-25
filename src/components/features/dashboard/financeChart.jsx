@@ -8,8 +8,8 @@ export const data = {
   labels: ["Food", "Transport", "Bills", "Entertainment", "Pet-Related", "Travel"],
   datasets: [
     {
-      label: "# of Votes",
-      data: [12, 19, 3, 5, 2, 3],
+      label: "# of Money Spent",
+      data: [860, 121, 240, 300, 238, 2140],
       backgroundColor: [
         "rgba(255, 99, 132, 0.2)",
         "rgba(54, 162, 235, 0.2)",
