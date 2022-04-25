@@ -40,7 +40,7 @@ export default function AccountForm({ profile }) {
   };
 
   return (
-    <div>
+    <div className="mx-auto max-w-6xl bg-gray-200 py-20 px-12 lg:px-24 shadow-xl mb-24">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
           <div className="-mx-3 md:flex mb-6"></div>
