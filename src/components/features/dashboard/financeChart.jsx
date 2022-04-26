@@ -1,40 +1,69 @@
-import React from "react"
+import React, { useEffect, useState } from "react";
+import { BACKEND } from "../../../utils";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { Pie } from "react-chartjs-2"
+import { Pie } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export const data = {
-  labels: ["Food", "Transport", "Bills", "Entertainment", "Pet-Related", "Travel"],
+export default function FinanceCharts() {
+  const [chart, setChart] = useState([]);
+
+  const getTransactionData = () => {
+    const URL = BACKEND + "transactions";
+    fetch(URL, {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setChart(data);
+        // console.log(data);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    getTransactionData();
+  }, []);
+
+  const expense = chart.filter(
+    (categoryName) => categoryName.tCategory == "Expense"
+  );
+
+  const sumExpense = expense
+    .map((item) => item.amount)
+    .reduce((prev, curr) => prev + curr, 0);
+
+  const income = chart.filter(
+    (categoryName) => categoryName.tCategory == "Income"
+  );
+
+  const sumIncome = income
+    .map((item) => item.amount)
+    .reduce((prev, curr) => prev + curr, 0);
+
+  console.log(sumExpense)
+  console.log(sumIncome);
+
+const data = {
+  labels: ["Income", "Expense"],
   datasets: [
     {
       label: "# of Money Spent",
-      data: [860, 121, 240, 300, 238, 2140],
-      backgroundColor: [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(153, 102, 255, 0.2)",
-        "rgba(255, 159, 64, 0.2)",
-      ],
-      borderColor: [
-        "rgba(255, 99, 132, 1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 206, 86, 1)",
-        "rgba(75, 192, 192, 1)",
-        "rgba(153, 102, 255, 1)",
-        "rgba(255, 159, 64, 1)",
-      ],
+      data: [sumIncome, sumExpense],
+      backgroundColor: ["rgba(183, 244, 216)", "rgba(255, 99, 132, 0.2)"],
+      borderColor: ["rgba(3, 201, 169)", "rgba(196, 77, 86, 1)"],
       borderWidth: 1,
     },
   ],
 };
-
-export default function FinanceCharts() {
-    return (
-      <div>
-        <Pie data={data} />
-      </div>
-    );
+  
+  return (
+    <div>
+      <Pie data={data}/>
+    </div>
+  );
 }
