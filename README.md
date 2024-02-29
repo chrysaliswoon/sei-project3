@@ -53,11 +53,12 @@ For this project, we used the following technologies:
 
 For our wireframe, we used Figma to create an initial skeleton of what the project will look like, and identify the necessary component and files:
 
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FT4dnXmXGpywDvNKPRQh0ss%2FProject-3%3Ftype%3Ddesign%26node-id%3D0%253A1%26mode%3Ddesign%26t%3D4ib42sNRdyzkJm20-1" allowfullscreen></iframe>
 
 ###  User Stories
 
 
-Insert user story
+![User Story Diagram]()
 
 
 ---
@@ -65,8 +66,6 @@ Insert user story
 ## 💡 Planning and Development Process
 
 We had approximately 3 weeks from ideation to creation to develop a fullstack application. Below is a rough estimation of how we had broken down our task lists:
-
-**Week 1**
 
 1. Set up the Github Repository using the template given in the project page
 
@@ -92,14 +91,6 @@ We had approximately 3 weeks from ideation to creation to develop a fullstack ap
 
 8. Set up component files and pages based on wireframe
 
-**Week 2**
-
-1. 
-
-**Week 3**
-
-1. 
-
 ### Problem-Solving Strategy
 
 In order to have clarity on what was required to create the project, our first priority was creating a wireframe and a working prototype to have a visual of how everything would flow. By creating a wireframe, it also allowed us to see what components and pages we would need to create our project, and delegate the tasks. 
@@ -109,8 +100,7 @@ We spent quite a bit of time brainstorming and figuring out what components and 
 
 ### 👾 Unsolved problems
 
-- [ ] (insert problem)
-
+- [ ] The Dashboard was incomplete due to insufficient time and most of it is a placeholder for the actual product.
 
 ---
 
