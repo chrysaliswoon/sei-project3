@@ -55,9 +55,7 @@ For our wireframe, we used Figma to create an initial skeleton of what the proje
 
 ###  User Stories
 
-
-![User Story Diagram](https://github.com/chrysaliswoon/financial-tracker/blob/main/src/assets/user_persona.png)
-
+![User Story Diagram]([https://github.com/chrysaliswoon/financial-tracker/blob/main/src/assets/user_persona.png](https://github.com/chrysaliswoon/financial-tracker/blob/main/src/assets/User_Persona.png)
 
 ---
 
@@ -89,6 +87,26 @@ We had approximately 3 weeks from ideation to creation to develop a fullstack ap
 
 8. Set up component files and pages based on wireframe
 
+## Breakdown of Project
+
+![Project Breakdown](https://github.com/chrysaliswoon/financial-tracker/blob/main/src/assets/1.png)
+
+![Project Breakdown](https://github.com/chrysaliswoon/financial-tracker/blob/main/src/assets/2.png)
+
+![Project Breakdown](https://github.com/chrysaliswoon/financial-tracker/blob/main/src/assets/3.png)
+
+![Project Breakdown](https://github.com/chrysaliswoon/financial-tracker/blob/main/src/assets/4.png)
+
+![Project Breakdown](https://github.com/chrysaliswoon/financial-tracker/blob/main/src/assets/5.png)
+
+![Project Breakdown](https://github.com/chrysaliswoon/financial-tracker/blob/main/src/assets/6.png)
+
+![Project Breakdown](https://github.com/chrysaliswoon/financial-tracker/blob/main/src/assets/7.png)
+
+![Project Breakdown](https://github.com/chrysaliswoon/financial-tracker/blob/main/src/assets/8.png)
+
+![Project Breakdown](https://github.com/chrysaliswoon/financial-tracker/blob/main/src/assets/9.png)
+
 ### Problem-Solving Strategy
 
 In order to have clarity on what was required to create the project, our first priority was creating a wireframe and a working prototype to have a visual of how everything would flow. By creating a wireframe, it also allowed us to see what components and pages we would need to create our project, and delegate the tasks. 
@@ -96,9 +114,11 @@ In order to have clarity on what was required to create the project, our first p
 We spent quite a bit of time brainstorming and figuring out what components and data we needed to create and collect before starting the actual coding. 
 
 
-### 👾 Unsolved problems
+### 👾 Challenges & Unsolved problems
 
-- [ ] The Dashboard was incomplete due to insufficient time and most of it is a placeholder for the actual product.
+![Challenges](https://github.com/chrysaliswoon/financial-tracker/blob/main/src/assets/challenge(1).png)
+
+![Challenges](https://github.com/chrysaliswoon/financial-tracker/blob/main/src/assets/challenge(2).png)
 
 ---
 
