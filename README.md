@@ -51,9 +51,7 @@ For this project, we used the following technologies:
 
 ### 📝 Wireframes
 
-For our wireframe, we used Figma to create an initial skeleton of what the project will look like, and identify the necessary component and files:
-
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FT4dnXmXGpywDvNKPRQh0ss%2FProject-3%3Ftype%3Ddesign%26node-id%3D0%253A1%26mode%3Ddesign%26t%3D4ib42sNRdyzkJm20-1" allowfullscreen></iframe>
+For our wireframe, we used Figma to create an initial skeleton of what the project will look like, and identify the necessary component and files. You can view the wireframe !here[Wireframe](https://www.figma.com/file/T4dnXmXGpywDvNKPRQh0ss/Project-3?type=design&node-id=0%3A1&mode=design&t=4ib42sNRdyzkJm20-1)
 
 ###  User Stories
 
