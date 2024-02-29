@@ -56,7 +56,7 @@ For our wireframe, we used Figma to create an initial skeleton of what the proje
 ###  User Stories
 
 
-![User Story Diagram]()
+![User Story Diagram](https://github.com/chrysaliswoon/financial-tracker/blob/main/src/assets/user_persona.png)
 
 
 ---
